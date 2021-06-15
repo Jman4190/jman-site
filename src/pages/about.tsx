@@ -20,7 +20,7 @@ function About() {
         <div className="space-y-12 " data-cy="about-page">
           <div className="-mx-4 -mt-16 md:mt-0 md:-mx-8 ">
             <Image
-              src="/static/img/about.jpg"
+              src="/static/img/about_jabe.jpg"
               alt={'A photo of me'}
               layout="responsive"
               width="672"
@@ -31,47 +31,39 @@ function About() {
           <div className="space-y-12 ">
             <div className="leading-relaxed prose ">
               <p>
-                Hey, I&apos;m Brian. I&apos;m a designer,{' '}
-                <a href="https://designdetails.fm">podcaster</a>,{' '}
-                <Link href="/writing" passHref>
-                  <a>writer</a>
-                </Link>
-                , and{' '}
-                <a href="https://github.com/brianlovin">software tinkerer</a>.
-                I&apos;m currently building{' '}
-                <a href="https://github.com/mobile">
-                  native mobile apps at GitHub
-                </a>
-                .
+                  Howdy, I&apos;m John. I&apos;m an online creator who tries to produce more than I consume. 
+                  You can get to know my voice through my sporadic {' '}
+                  <Link href="/writing" passHref>
+                    <a>blog posts</a>
+                  </Link>,{' '} 
+                  <a href="https://www.getrevue.co/profile/jman4190">weekly newsletter</a>,{' '}
+                  or following my breadcrumbs on{' '}
+                  <a href="https://twitter.com/learnwithjabe">Twitter</a>.
+                  I&apos;m currently working in product at {' '}
+                  <a href="https://www.houzz.com">
+                    Houzz
+                  </a>
+                  .
               </p>
               <p>
-                Before GitHub, I co-founded{' '}
-                <a href="https://spectrum.chat">Spectrum</a>, a platform for
-                large-scale communities to have better public conversations.
-                Spectrum was acquired by GitHub in November, 2018.
+                In my free time I focus on {' '}
+                <a href="https://www.youtube.com/channel/UCOuzm2rfhw0ZXm-UyBVQ_8A">Learn With Jabe</a>,
+                a YouTube channel teaching beginners how to code. 
+                You'll find fun weekend projects focused on Python, SQL, GPT3, Web APIs, NBA Data, No Code Tools and more. 
+                I am a firm believer that the best way to learn is to teach.
               </p>
               <p>
-                Before Spectrum I designed payments experiences at Facebook,
-                working across Facebook, Messenger, WhatsApp, and Instagram. I
-                originally cut my teeth as the first product designer at{' '}
-                <a href="https://buffer.com">Buffer</a>.
+              I have a friends and family newsletter where I write about why I’m liking certain tweets on Twitter. 
+              It’s called{' '}
+                <a href="https://www.getrevue.co/profile/jman4190">Jabes Twitter Musings</a>
+                {' '}and if you’re interested to learn more you can get a taste here. 
               </p>
               <p>
-                I also co-host the{' '}
-                <a href="https://designdetails.fm">Design Details Podcast</a>, a
-                weekly conversation about design process and culture. Design
-                Details is part of <a href="https://spec.fm">Spec.fm</a>, a
-                podcast network for designers and developers, which I co-founded
-                in 2015.
-              </p>
-              <p>
-                You can find me on{' '}
-                <a href="https://twitter.com/brian_lovin">Twitter</a> where I
-                talk about design and development, or on{' '}
-                <a href="https://github.com/brianlovin">GitHub</a> where I’m
-                building in the open, or on{' '}
-                <a href="https://figma.com/@brian">Figma</a> where I’m exploring
-                how plugins can automate the tedious parts of interface design.
+                You can either follow me on{' '}
+                <a href="https://twitter.com/jman4190">Twitter</a> or better yet, my{' '}
+                <a href="https://twitter.com/learnwithjabe">bot</a> which retweets all of my likes. 
+                I’ve been learning to code over the years and you can check in on my progress on{' '}
+                <a href="https://github.com/jman4190">Github</a> where I share my repositories for others to build on.
               </p>
               <p>
                 Photo by <a href="https://twitter.com/rxnjmmt">@rxnjmmt</a>.

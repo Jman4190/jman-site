@@ -24,32 +24,33 @@ function Home({ data }: Props) {
           <div className="space-y-8 md:items-center">
             <div className="prose lg:prose-lg text-primary">
               <p>
-                Hey, I&apos;m Brian. I&apos;m a designer,{' '}
-                <a href="https://designdetails.fm">podcaster</a>,{' '}
+                Howdy, I&apos;m John. I&apos;m an online creator who tries to produce more than I consume. 
+                You can get to know my voice through my sporadic {' '}
                 <Link href="/writing" passHref>
-                  <a>writer</a>
-                </Link>
-                , and{' '}
-                <a href="https://github.com/brianlovin">software tinkerer</a>.
-                I&apos;m currently building{' '}
-                <a href="https://github.com/mobile">
-                  native mobile apps at GitHub
+                  <a>blog posts</a>
+                </Link>,{' '} 
+                <a href="https://www.getrevue.co/profile/jman4190">weekly newsletter</a>,{' '}
+                 or following my breadcrumbs on{' '}
+                <a href="https://twitter.com/learnwithjabe">Twitter</a>.
+                I&apos;m currently working in product at {' '}
+                <a href="https://www.houzz.com">
+                  Houzz
                 </a>
                 .
               </p>
 
               <p>
-                In the past I co-founded{' '}
-                <a href="https://github.com/withspectrum/spectrum">Spectrum</a>,
-                a platform for online communities. Before that, I worked at
-                Facebook building payments systems, and cut my teeth as a
-                product designer at Buffer.
+                In my free time I focus on {' '}
+                <a href="https://www.youtube.com/channel/UCOuzm2rfhw0ZXm-UyBVQ_8A">Learn With Jabe</a>,
+                a YouTube channel teaching beginners how to code. 
+                You'll find fun weekend projects focused on Python, SQL, GPT3, Web APIs, NBA Data, No Code Tools and more. 
+                I am a firm believer that the best way to learn is to teach.
               </p>
             </div>
             <div className="flex space-x-4">
               <Link href="/about" passHref>
                 <a>
-                  <Button>Learn more about me</Button>
+                  <Button>About me</Button>
                 </a>
               </Link>
               <a href="https://changelog.brianlovin.com">

@@ -3,7 +3,6 @@ import { Post } from '~/graphql/types.generated'
 import WritingSubscribeBox from '~/components/Writing/Subscribe'
 import SyntaxHighlighter from '~/components/SyntaxHighlighter'
 import SEO from './SEO'
-import Feedback from '../Feedback'
 import { CenteredColumn } from '~/components/Layouts'
 import Link from 'next/link'
 
@@ -46,7 +45,6 @@ export default function PostView({ post }: Props) {
         />
 
         <div className="mt-32 ">
-          <Feedback post={post} />
           <WritingSubscribeBox />
         </div>
       </CenteredColumn>

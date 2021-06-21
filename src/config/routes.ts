@@ -19,7 +19,7 @@ const routes = {
     path: '/projects',
     seo: extendSEO({
       title: 'Projects',
-      description: 'What I’m working on.',
+      description: 'Weekend side projects.',
       url: 'projects',
     }),
   },
@@ -28,19 +28,9 @@ const routes = {
     path: '/writing',
     seo: extendSEO({
       title: 'Writing',
-      description: 'Thinking out loud about software design and development.',
+      description: 'The best way to learn is to teach.',
       image: 'meta/overthought.png',
       url: 'writing',
-    }),
-  },
-  hn: {
-    label: 'Hacker News',
-    path: '/hn',
-    seo: extendSEO({
-      title: 'Hacker News',
-      description: 'My personal Hacker News reader.',
-      image: 'meta/hn.png',
-      url: 'hn',
     }),
   },
   bookmarks: {
@@ -63,16 +53,6 @@ const routes = {
       url: 'app-dissection',
     }),
   },
-  ama: {
-    label: 'Ask Me Anything',
-    path: '/ama',
-    seo: extendSEO({
-      title: 'Ask Me Anything',
-      description: 'Answering questions, just for fun.',
-      image: 'meta/ama.png',
-      url: 'ama',
-    }),
-  },
   login: {
     label: 'Login',
     path: '/login',
@@ -80,16 +60,6 @@ const routes = {
       title: 'Login',
       description: 'What do you think you’re doing?',
       url: 'login',
-    }),
-  },
-  security: {
-    label: 'Security Checklist',
-    path: '/security',
-    seo: extendSEO({
-      title: 'Security Checklist',
-      description: 'Tools and resources for staying safe on the internet.',
-      image: 'meta/security.png',
-      url: 'security',
     }),
   },
   stack: {
@@ -100,16 +70,6 @@ const routes = {
       description: 'My favorite tools and software.',
       image: 'meta/stack.png',
       url: 'stack',
-    }),
-  },
-  startupJobs: {
-    label: 'Startup Jobs',
-    path: '/startups',
-    seo: extendSEO({
-      title: 'Startup Jobs',
-      description: 'Connecting great designers with growing startups.',
-      image: 'meta/startups.png',
-      url: 'startups',
     }),
   },
 }

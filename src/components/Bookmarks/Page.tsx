@@ -31,7 +31,7 @@ export default function BookmarksPage({ category }) {
             title="Bookmarks"
             subtitle="Internet things, saved for later."
           />
-          {isMe && <AddBookmark />}
+          <AddBookmark />
           <BookmarksNavigation />
           <BookmarksList category={category} />
         </div>

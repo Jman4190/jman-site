@@ -16,7 +16,7 @@ import {
 export default {
   login,
   logout,
-  addBookmark: requiresMe(addBookmark),
+  addBookmark: addBookmark,
   editBookmark: requiresMe(editBookmark),
   deleteBookmark: requiresMe(deleteBookmark),
   addBookmarkReaction,

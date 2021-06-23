@@ -41,13 +41,13 @@ export default function WritingSubscribeBox() {
     >
       <div className="space-y-2 ">
         <p className="flex items-center font-semibold text-primary">
-          The email newsletter
+          Don't miss a new post
         </p>
         <p className="text-tertiary">
-          Get updates about new posts, new projects, or other meaningful updates
-          to this site delivered to your inbox. Alternatively, you can{' '}
+          Get updates whenever I publish something new, launch a project or just have something so good to share, I can't keep it to myself.
+          The least you can do is{' '}
           <a
-            href="https://twitter.com/brian_lovin/"
+            href="https://twitter.com/jman4190/"
             className="font-normal rounded-sm px-0.5 -mx-0.5 bg-blue-500 text-primary bg-opacity-20 hover:bg-opacity-30 dark:hover:bg-opacity-100"
           >
             follow me on Twitter

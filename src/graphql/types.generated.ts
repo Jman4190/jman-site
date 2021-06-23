@@ -22,22 +22,6 @@ export type Scalars = {
   Float: number
 }
 
-export type Ama = {
-  __typename?: 'AMA'
-  id: Scalars['String']
-  question: Scalars['String']
-  status?: Maybe<AmaStatus>
-  answer?: Maybe<Scalars['String']>
-  createdAt?: Maybe<Scalars['String']>
-  updatedAt?: Maybe<Scalars['String']>
-  reactions?: Maybe<Scalars['Int']>
-}
-
-export enum AmaStatus {
-  Pending = 'PENDING',
-  Answered = 'ANSWERED',
-}
-
 export type Bookmark = {
   __typename?: 'Bookmark'
   id: Scalars['ID']
@@ -75,10 +59,6 @@ export type Mutation = {
   editBookmark?: Maybe<Bookmark>
   deleteBookmark?: Maybe<Scalars['Boolean']>
   addBookmarkReaction?: Maybe<Bookmark>
-  addAMAQuestion?: Maybe<Scalars['Boolean']>
-  deleteAMAQuestion?: Maybe<Scalars['Boolean']>
-  editAMAQuestion?: Maybe<Ama>
-  addAMAReaction?: Maybe<Ama>
 }
 
 export type MutationLoginArgs = {
@@ -105,25 +85,6 @@ export type MutationDeleteBookmarkArgs = {
 }
 
 export type MutationAddBookmarkReactionArgs = {
-  id: Scalars['ID']
-}
-
-export type MutationAddAmaQuestionArgs = {
-  question: Scalars['String']
-}
-
-export type MutationDeleteAmaQuestionArgs = {
-  id: Scalars['ID']
-}
-
-export type MutationEditAmaQuestionArgs = {
-  id: Scalars['ID']
-  answer?: Maybe<Scalars['String']>
-  question?: Maybe<Scalars['String']>
-  status?: Maybe<AmaStatus>
-}
-
-export type MutationAddAmaReactionArgs = {
   id: Scalars['ID']
 }
 
@@ -182,28 +143,12 @@ export type QueryPostArgs = {
   slug: Scalars['String']
 }
 
-export type QueryAmaQuestionsArgs = {
-  skip?: Maybe<Scalars['Int']>
-  status?: Maybe<AmaStatus>
-}
-
 export type Repo = {
   __typename?: 'Repo'
   org?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   description?: Maybe<Scalars['String']>
   stars?: Maybe<Scalars['Int']>
-}
-
-export type AmaInfoFragment = {
-  __typename?: 'AMA'
-  id: string
-  createdAt?: Maybe<string>
-  updatedAt?: Maybe<string>
-  question: string
-  answer?: Maybe<string>
-  status?: Maybe<AmaStatus>
-  reactions?: Maybe<number>
 }
 
 export type BookmarkInfoFragment = {
@@ -248,45 +193,6 @@ export type RepoInfoFragment = {
   name?: Maybe<string>
   description?: Maybe<string>
   stars?: Maybe<number>
-}
-
-export type EditAmaQuestionMutationVariables = Exact<{
-  id: Scalars['ID']
-  question: Scalars['String']
-  answer: Scalars['String']
-  status: AmaStatus
-}>
-
-export type EditAmaQuestionMutation = {
-  __typename?: 'Mutation'
-  editAMAQuestion?: Maybe<{ __typename?: 'AMA' } & AmaInfoFragment>
-}
-
-export type DeleteAmaQuestionMutationVariables = Exact<{
-  id: Scalars['ID']
-}>
-
-export type DeleteAmaQuestionMutation = {
-  __typename?: 'Mutation'
-  deleteAMAQuestion?: Maybe<boolean>
-}
-
-export type AddAmaQuestionMutationVariables = Exact<{
-  question: Scalars['String']
-}>
-
-export type AddAmaQuestionMutation = {
-  __typename?: 'Mutation'
-  addAMAQuestion?: Maybe<boolean>
-}
-
-export type AddAmaReactionMutationVariables = Exact<{
-  id: Scalars['ID']
-}>
-
-export type AddAmaReactionMutation = {
-  __typename?: 'Mutation'
-  addAMAReaction?: Maybe<{ __typename?: 'AMA' } & AmaInfoFragment>
 }
 
 export type LoginMutationVariables = Exact<{
@@ -347,16 +253,6 @@ export type AddBookmarkReactionMutation = {
   >
 }
 
-export type GetAmaQuestionsQueryVariables = Exact<{
-  skip?: Maybe<Scalars['Int']>
-  status?: Maybe<AmaStatus>
-}>
-
-export type GetAmaQuestionsQuery = {
-  __typename?: 'Query'
-  amaQuestions: Array<Maybe<{ __typename?: 'AMA' } & AmaInfoFragment>>
-}
-
 export type GetBookmarksQueryVariables = Exact<{
   skip?: Maybe<Scalars['Int']>
   category?: Maybe<Scalars['String']>
@@ -403,17 +299,6 @@ export type GetPostQuery = {
   post?: Maybe<{ __typename?: 'Post' } & PostInfoFragment>
 }
 
-export const AmaInfoFragmentDoc = gql`
-  fragment AMAInfo on AMA {
-    id
-    createdAt
-    updatedAt
-    question
-    answer
-    status
-    reactions
-  }
-`
 export const BookmarkInfoFragmentDoc = gql`
   fragment BookmarkInfo on Bookmark {
     __typename
@@ -459,217 +344,6 @@ export const RepoInfoFragmentDoc = gql`
     stars
   }
 `
-export const EditAmaQuestionDocument = gql`
-  mutation editAMAQuestion(
-    $id: ID!
-    $question: String!
-    $answer: String!
-    $status: AMAStatus!
-  ) {
-    editAMAQuestion(
-      id: $id
-      question: $question
-      answer: $answer
-      status: $status
-    ) {
-      ...AMAInfo
-    }
-  }
-  ${AmaInfoFragmentDoc}
-`
-export type EditAmaQuestionMutationFn = Apollo.MutationFunction<
-  EditAmaQuestionMutation,
-  EditAmaQuestionMutationVariables
->
-
-/**
- * __useEditAmaQuestionMutation__
- *
- * To run a mutation, you first call `useEditAmaQuestionMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useEditAmaQuestionMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [editAmaQuestionMutation, { data, loading, error }] = useEditAmaQuestionMutation({
- *   variables: {
- *      id: // value for 'id'
- *      question: // value for 'question'
- *      answer: // value for 'answer'
- *      status: // value for 'status'
- *   },
- * });
- */
-export function useEditAmaQuestionMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    EditAmaQuestionMutation,
-    EditAmaQuestionMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    EditAmaQuestionMutation,
-    EditAmaQuestionMutationVariables
-  >(EditAmaQuestionDocument, options)
-}
-export type EditAmaQuestionMutationHookResult = ReturnType<
-  typeof useEditAmaQuestionMutation
->
-export type EditAmaQuestionMutationResult =
-  Apollo.MutationResult<EditAmaQuestionMutation>
-export type EditAmaQuestionMutationOptions = Apollo.BaseMutationOptions<
-  EditAmaQuestionMutation,
-  EditAmaQuestionMutationVariables
->
-export const DeleteAmaQuestionDocument = gql`
-  mutation deleteAMAQuestion($id: ID!) {
-    deleteAMAQuestion(id: $id)
-  }
-`
-export type DeleteAmaQuestionMutationFn = Apollo.MutationFunction<
-  DeleteAmaQuestionMutation,
-  DeleteAmaQuestionMutationVariables
->
-
-/**
- * __useDeleteAmaQuestionMutation__
- *
- * To run a mutation, you first call `useDeleteAmaQuestionMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useDeleteAmaQuestionMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [deleteAmaQuestionMutation, { data, loading, error }] = useDeleteAmaQuestionMutation({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useDeleteAmaQuestionMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    DeleteAmaQuestionMutation,
-    DeleteAmaQuestionMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    DeleteAmaQuestionMutation,
-    DeleteAmaQuestionMutationVariables
-  >(DeleteAmaQuestionDocument, options)
-}
-export type DeleteAmaQuestionMutationHookResult = ReturnType<
-  typeof useDeleteAmaQuestionMutation
->
-export type DeleteAmaQuestionMutationResult =
-  Apollo.MutationResult<DeleteAmaQuestionMutation>
-export type DeleteAmaQuestionMutationOptions = Apollo.BaseMutationOptions<
-  DeleteAmaQuestionMutation,
-  DeleteAmaQuestionMutationVariables
->
-export const AddAmaQuestionDocument = gql`
-  mutation addAMAQuestion($question: String!) {
-    addAMAQuestion(question: $question)
-  }
-`
-export type AddAmaQuestionMutationFn = Apollo.MutationFunction<
-  AddAmaQuestionMutation,
-  AddAmaQuestionMutationVariables
->
-
-/**
- * __useAddAmaQuestionMutation__
- *
- * To run a mutation, you first call `useAddAmaQuestionMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useAddAmaQuestionMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [addAmaQuestionMutation, { data, loading, error }] = useAddAmaQuestionMutation({
- *   variables: {
- *      question: // value for 'question'
- *   },
- * });
- */
-export function useAddAmaQuestionMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    AddAmaQuestionMutation,
-    AddAmaQuestionMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    AddAmaQuestionMutation,
-    AddAmaQuestionMutationVariables
-  >(AddAmaQuestionDocument, options)
-}
-export type AddAmaQuestionMutationHookResult = ReturnType<
-  typeof useAddAmaQuestionMutation
->
-export type AddAmaQuestionMutationResult =
-  Apollo.MutationResult<AddAmaQuestionMutation>
-export type AddAmaQuestionMutationOptions = Apollo.BaseMutationOptions<
-  AddAmaQuestionMutation,
-  AddAmaQuestionMutationVariables
->
-export const AddAmaReactionDocument = gql`
-  mutation addAMAReaction($id: ID!) {
-    addAMAReaction(id: $id) {
-      ...AMAInfo
-    }
-  }
-  ${AmaInfoFragmentDoc}
-`
-export type AddAmaReactionMutationFn = Apollo.MutationFunction<
-  AddAmaReactionMutation,
-  AddAmaReactionMutationVariables
->
-
-/**
- * __useAddAmaReactionMutation__
- *
- * To run a mutation, you first call `useAddAmaReactionMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useAddAmaReactionMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [addAmaReactionMutation, { data, loading, error }] = useAddAmaReactionMutation({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useAddAmaReactionMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    AddAmaReactionMutation,
-    AddAmaReactionMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    AddAmaReactionMutation,
-    AddAmaReactionMutationVariables
-  >(AddAmaReactionDocument, options)
-}
-export type AddAmaReactionMutationHookResult = ReturnType<
-  typeof useAddAmaReactionMutation
->
-export type AddAmaReactionMutationResult =
-  Apollo.MutationResult<AddAmaReactionMutation>
-export type AddAmaReactionMutationOptions = Apollo.BaseMutationOptions<
-  AddAmaReactionMutation,
-  AddAmaReactionMutationVariables
->
 export const LoginDocument = gql`
   mutation login($password: String!) {
     login(password: $password)
@@ -989,66 +663,7 @@ export type AddBookmarkReactionMutationOptions = Apollo.BaseMutationOptions<
   AddBookmarkReactionMutation,
   AddBookmarkReactionMutationVariables
 >
-export const GetAmaQuestionsDocument = gql`
-  query GetAMAQuestions($skip: Int, $status: AMAStatus) {
-    amaQuestions(skip: $skip, status: $status) {
-      ...AMAInfo
-    }
-  }
-  ${AmaInfoFragmentDoc}
-`
 
-/**
- * __useGetAmaQuestionsQuery__
- *
- * To run a query within a React component, call `useGetAmaQuestionsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetAmaQuestionsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetAmaQuestionsQuery({
- *   variables: {
- *      skip: // value for 'skip'
- *      status: // value for 'status'
- *   },
- * });
- */
-export function useGetAmaQuestionsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetAmaQuestionsQuery,
-    GetAmaQuestionsQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<GetAmaQuestionsQuery, GetAmaQuestionsQueryVariables>(
-    GetAmaQuestionsDocument,
-    options
-  )
-}
-export function useGetAmaQuestionsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetAmaQuestionsQuery,
-    GetAmaQuestionsQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<
-    GetAmaQuestionsQuery,
-    GetAmaQuestionsQueryVariables
-  >(GetAmaQuestionsDocument, options)
-}
-export type GetAmaQuestionsQueryHookResult = ReturnType<
-  typeof useGetAmaQuestionsQuery
->
-export type GetAmaQuestionsLazyQueryHookResult = ReturnType<
-  typeof useGetAmaQuestionsLazyQuery
->
-export type GetAmaQuestionsQueryResult = Apollo.QueryResult<
-  GetAmaQuestionsQuery,
-  GetAmaQuestionsQueryVariables
->
 export const GetBookmarksDocument = gql`
   query GetBookmarks($skip: Int, $category: String) {
     bookmarks(skip: $skip, category: $category) {

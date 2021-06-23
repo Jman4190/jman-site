@@ -16,6 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const data = {
     email_address: email,
     status: 'subscribed',
+    tags: ['Dot Com']
   }
 
   const response = await fetch(
@@ -38,7 +39,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (response.status >= 400) {
     return res.status(400).json({
-      error: `Hm, couldn’t add you to the newsletter - ping me directly at ${baseEmail} and I’ll add you to this list!`,
+      error: `Hmm, couldn’t add you to the list - ping me directly at ${baseEmail} and I’ll add you!`,
     })
   }
 

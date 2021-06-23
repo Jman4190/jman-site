@@ -29,9 +29,9 @@ export default function BookmarksPage({ category }) {
           </Link>
           <PageHeader
             title="Bookmarks"
-            subtitle="Internet things, saved for later."
+            subtitle="Internet masterpieces that I'm constantly referencing'."
           />
-          <AddBookmark />
+          {isMe && <AddBookmark />}
           <BookmarksNavigation />
           <BookmarksList category={category} />
         </div>

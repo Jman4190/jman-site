@@ -1,25 +1,25 @@
-export const baseUrl = 'https://brianlovin.com'
-export const baseEmail = 'hi@brianlovin.com'
+export const baseUrl = 'https://johnmannelly.com'
+export const baseEmail = 'mannelly.john@gmail.com'
 
 export const defaultSEO = {
-  title: 'Brian Lovin',
+  title: 'John "Jabe" Mannelly',
   description:
-    'Product designer, podcaster, and writer, living in San Francisco. Currently building native mobile apps at GitHub.',
+    'Online content creator and producer, living in San Francisco. Currently working as a PM at Houzz.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: baseUrl,
-    site_name: 'Brian Lovin',
+    site_name: 'John Mannelly',
     images: [
       {
         url: `${baseUrl}/static/meta/og-image.png`,
-        alt: 'Brian Lovin',
+        alt: 'John Mannelly',
       },
     ],
   },
   twitter: {
-    handle: '@brian_lovin',
-    site: '@brian_lovin',
+    handle: '@jman4190',
+    site: '@jman4190',
     cardType: 'summary_large_image',
   },
 }

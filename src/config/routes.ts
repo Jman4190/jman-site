@@ -38,7 +38,7 @@ const routes = {
     path: '/bookmarks',
     seo: extendSEO({
       title: 'Bookmarks',
-      description: 'Internet things, saved for later.',
+      description: 'Internet masterpieces that I am constantly referencing',
       image: 'meta/bookmarks.png',
       url: 'bookmarks',
     }),

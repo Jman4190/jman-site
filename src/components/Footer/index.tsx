@@ -16,8 +16,8 @@ export function Footer() {
             <a className="black-link">About</a>
           </Link>
 
-          <a href="https://twitter.com/brian_lovin" className="black-link">
-            @brian_lovin
+          <a href="https://twitter.com/jman4190" className="black-link">
+            @jman4190
           </a>
         </div>
 
@@ -25,11 +25,9 @@ export function Footer() {
           <Link href="/writing" as="/writing" passHref>
             <a className="black-link">Writing</a>
           </Link>
+          
           <Link href="/app-dissection" as="/app-dissection" passHref>
             <a className="black-link">App Dissection</a>
-          </Link>
-          <Link href="/ama" as="/ama" passHref>
-            <a className="black-link">AMA</a>
           </Link>
         </div>
 
@@ -38,17 +36,6 @@ export function Footer() {
             <a className="black-link">Bookmarks</a>
           </Link>
 
-          <Link href="/hn" as="/hn" passHref>
-            <a className="black-link">Hacker News</a>
-          </Link>
-
-          <Link href="/stack" as="/stack" passHref>
-            <a className="black-link">My Stack</a>
-          </Link>
-
-          <Link href="/security" as="/security" passHref>
-            <a className="black-link">Security Checklist</a>
-          </Link>
         </div>
       </div>
     </CenteredColumn>

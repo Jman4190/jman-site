@@ -72,32 +72,11 @@ function ProjectsList() {
       </div>
 
       <div className="space-y-1">
-        <Link passHref href="/stack">
-          <a className="font-medium highlight-link-hover">My Stack</a>
-        </Link>
-
-        <p className="text-tertiary">
-          A curated list of my favorite tools and software.
-        </p>
-      </div>
-
-      <div className="space-y-1">
         <Link passHref href="/bookmarks">
           <a className="font-medium highlight-link-hover">Bookmarks</a>
         </Link>
 
-        <p className="text-tertiary">Internet things, saved for later.</p>
-      </div>
-
-      <div className="space-y-1">
-        <Link passHref href="/app-dissection">
-          <a className="font-medium highlight-link-hover">App Dissection</a>
-        </Link>
-
-        <p className="text-tertiary">
-          In-depth explorations of visual and interaction design in well-known
-          apps.
-        </p>
+        <p className="text-tertiary">Internet masterpieces that I'm constantly referencing.</p>
       </div>
     </div>
   )

@@ -15,9 +15,6 @@ describe('Posts index', () => {
 
   it('should render newsletter', () => {
     cy.visit('/writing/adding-dark-mode-with-next-js')
-    cy.get('[data-cy="writing-feedback-box"]')
-      .scrollIntoView()
-      .should('be.visible')
     cy.get('[data-cy="writing-subscribe-box"]')
       .scrollIntoView()
       .should('be.visible')

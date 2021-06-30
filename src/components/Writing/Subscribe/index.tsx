@@ -41,16 +41,16 @@ export default function WritingSubscribeBox() {
     >
       <div className="space-y-2 ">
         <p className="flex items-center font-semibold text-primary">
-          Don't miss a new post
+          New posts delivered to your inbox
         </p>
         <p className="text-tertiary">
-          Get updates whenever I publish something new, launch a project or just have something so good to share, I can't keep it to myself.
-          The least you can do is{' '}
+          Get updates whenever I publish something new. If you're not ready to smash subscribe just yet,
+          give me a test drive on{' '}
           <a
             href="https://twitter.com/jman4190/"
             className="font-normal rounded-sm px-0.5 -mx-0.5 bg-blue-500 text-primary bg-opacity-20 hover:bg-opacity-30 dark:hover:bg-opacity-100"
           >
-            follow me on Twitter
+            Twitter
           </a>
           .
         </p>

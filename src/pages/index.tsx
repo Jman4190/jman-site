@@ -50,14 +50,16 @@ function Home({ data }: Props) {
               </p>
             </div>
             <div className="flex space-x-4">
-              <Link href="/about" passHref>
+              <Link href="/writing" passHref>
                 <a>
-                  <Button>About me</Button>
+                  <Button>Blog posts</Button>
                 </a>
               </Link>
-              <a href="https://changelog.brianlovin.com">
-                <Button>My changelog</Button>
-              </a>
+              <Link href="/projects" passHref>
+                <a>
+                  <Button>Side Projects</Button>
+                </a>
+              </Link>
             </div>
           </div>
 

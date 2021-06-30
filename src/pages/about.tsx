@@ -20,7 +20,7 @@ function About() {
         <div className="space-y-12 " data-cy="about-page">
           <div className="-mx-4 -mt-16 md:mt-0 md:-mx-8 ">
             <Image
-              src="/static/img/about_jabe.jpg"
+              src="/static/img/about.jpg"
               alt={'A photo of me'}
               layout="responsive"
               width="672"

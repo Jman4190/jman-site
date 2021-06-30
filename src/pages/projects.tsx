@@ -39,7 +39,7 @@ function Projects({ data }: Props) {
                   href="https://github.com/jman4190"
                   className="inline-block font-medium highlight-link-hover"
                 >
-                  Check out my on GitHub &rarr;
+                  Check out my code on GitHub &rarr;
               </a>
             </div>
           </div>

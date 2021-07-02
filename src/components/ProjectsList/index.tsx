@@ -60,7 +60,7 @@ function ProjectsList() {
 
       <div className="space-y-1">
         <a
-          href="https://www.udemy.com/course/build-a-twitter-bot-with-python-tweepy-and-the-twitter-api/?referralCode=67751699BE11EF0933C2"
+          href="https://intheloopica.carrd.co"
           className="font-medium highlight-link-hover"
         >
           In The Loop

@@ -55,9 +55,9 @@ function Home({ data }: Props) {
                   <Button>Blog posts</Button>
                 </a>
               </Link>
-              <Link href="/projects" passHref>
+              <Link href="https://www.polywork.com/jman4190" passHref>
                 <a>
-                  <Button>Side Projects</Button>
+                  <Button>My Changelog</Button>
                 </a>
               </Link>
             </div>
@@ -78,7 +78,7 @@ function Home({ data }: Props) {
           </div>
 
           <div className="space-y-8">
-            <h4 className="font-list-heading">Select Projects</h4>
+            <h4 className="font-list-heading">Side Projects</h4>
             <ProjectsList />
             <Link href="/projects">
               <a className="inline-block font-medium highlight-link-hover">

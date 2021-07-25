@@ -23,8 +23,8 @@ function About() {
               src="/static/img/about.jpg"
               alt={'A photo of me'}
               layout="responsive"
-              width="672"
-              height="448"
+              width="1280"
+              height="720"
               className="md:rounded-lg"
             />
           </div>

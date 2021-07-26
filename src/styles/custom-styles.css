@@ -1,10 +1,9 @@
 /* Write your own custom component styles here */
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'iA Quattro';
   font-stretch: 25% 150%;
   font-weight: 100 1000;
-  src: url('/static/fonts/SourceSansPro-Regular.ttf')
-    format('truetype-variations');
+  src: url('/static/fonts/iAWriterQuattroV.ttf') format('truetype-variations');
 }
 
 @layer base {

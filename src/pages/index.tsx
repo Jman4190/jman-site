@@ -29,7 +29,7 @@ function Home({ data }: Props) {
                 <Link href="/writing" passHref>
                   <a>blog posts</a>
                 </Link>,{' '} 
-                <a href="https://www.getrevue.co/profile/jman4190">weekly newsletter</a>,{' '}
+                <a href="https://www.getrevue.co/profile/jman4190">monthly newsletter</a>,{' '}
                  or following my breadcrumbs on{' '}
                 <a href="https://twitter.com/learnwithjabe">Twitter</a>.
                 I&apos;m currently working in product at {' '}

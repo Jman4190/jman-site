@@ -4,7 +4,7 @@ export const baseEmail = 'mannelly.john@gmail.com'
 export const defaultSEO = {
   title: 'John "Jabe" Mannelly',
   description:
-    'Online content creator and producer, living in San Francisco. Currently working as a PM at Houzz.',
+    'Online content creator and producer, living on the East Coast. Currently working as a PM at Houzz.',
   openGraph: {
     type: 'website',
     locale: 'en_US',

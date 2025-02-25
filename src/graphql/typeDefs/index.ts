@@ -13,6 +13,7 @@ export default gql`
     featured: Boolean
     html: String
     id: String
+    medium_url: String
     meta_description: String
     meta_title: String
     og_description: String

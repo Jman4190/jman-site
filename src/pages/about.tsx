@@ -66,7 +66,7 @@ function About() {
                 <a href="https://github.com/jman4190">Github</a> where I share my repositories for others to build on.
               </p>
               <p>
-                Site template by <a href="https://twitter.com/brian_lovin">@brian_lovin</a>.
+                Site template by <a href="https://twitter.com/brian_lovin">@brian_lovin</a>
               </p>
             </div>
           </div>

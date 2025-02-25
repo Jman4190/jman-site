@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Post } from '~/graphql/types.generated'
-import Link from 'next/link'
 
 interface Props {
   posts: Post[]
@@ -20,11 +19,14 @@ export default function PostsList({ posts }: Props) {
 
         return (
           <div className="space-y-1" key={post.id}>
-            <Link href="/writing/[slug]" as={`/writing/${post.slug}`} passHref>
-              <a className="inline font-medium text-primary highlight-link-hover">
-                {post.title}
-              </a>
-            </Link>
+            <a 
+              href={post.medium_url} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline font-medium text-primary highlight-link-hover"
+            >
+              {post.title}
+            </a>
             {post.excerpt && <p className="text-tertiary">{post.excerpt}</p>}
             <p className="text-quaternary">{date}</p>
           </div>

@@ -8,10 +8,12 @@ export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K]
 }
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]?: Maybe<T[SubKey]> }
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]: Maybe<T[SubKey]> }
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>
+}
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>
+}
 const defaultOptions = {}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -20,6 +22,22 @@ export type Scalars = {
   Boolean: boolean
   Int: number
   Float: number
+}
+
+export type Ama = {
+  __typename?: 'AMA'
+  id: Scalars['String']
+  question: Scalars['String']
+  status?: Maybe<AmaStatus>
+  answer?: Maybe<Scalars['String']>
+  createdAt?: Maybe<Scalars['String']>
+  updatedAt?: Maybe<Scalars['String']>
+  reactions?: Maybe<Scalars['Int']>
+}
+
+export enum AmaStatus {
+  Pending = 'PENDING',
+  Answered = 'ANSWERED',
 }
 
 export type Bookmark = {
@@ -59,6 +77,10 @@ export type Mutation = {
   editBookmark?: Maybe<Bookmark>
   deleteBookmark?: Maybe<Scalars['Boolean']>
   addBookmarkReaction?: Maybe<Bookmark>
+  addAMAQuestion?: Maybe<Scalars['Boolean']>
+  deleteAMAQuestion?: Maybe<Scalars['Boolean']>
+  editAMAQuestion?: Maybe<Ama>
+  addAMAReaction?: Maybe<Ama>
 }
 
 export type MutationLoginArgs = {
@@ -88,6 +110,25 @@ export type MutationAddBookmarkReactionArgs = {
   id: Scalars['ID']
 }
 
+export type MutationAddAmaQuestionArgs = {
+  question: Scalars['String']
+}
+
+export type MutationDeleteAmaQuestionArgs = {
+  id: Scalars['ID']
+}
+
+export type MutationEditAmaQuestionArgs = {
+  id: Scalars['ID']
+  answer?: Maybe<Scalars['String']>
+  question?: Maybe<Scalars['String']>
+  status?: Maybe<AmaStatus>
+}
+
+export type MutationAddAmaReactionArgs = {
+  id: Scalars['ID']
+}
+
 export type Post = {
   __typename?: 'Post'
   canonical_url?: Maybe<Scalars['String']>
@@ -101,6 +142,7 @@ export type Post = {
   featured?: Maybe<Scalars['Boolean']>
   html?: Maybe<Scalars['String']>
   id?: Maybe<Scalars['String']>
+  medium_url?: Maybe<Scalars['String']>
   meta_description?: Maybe<Scalars['String']>
   meta_title?: Maybe<Scalars['String']>
   og_description?: Maybe<Scalars['String']>
@@ -141,6 +183,11 @@ export type QueryPostsArgs = {
 
 export type QueryPostArgs = {
   slug: Scalars['String']
+}
+
+export type QueryAmaQuestionsArgs = {
+  skip?: Maybe<Scalars['Int']>
+  status?: Maybe<AmaStatus>
 }
 
 export type Repo = {
@@ -185,6 +232,7 @@ export type PostInfoFragment = {
   excerpt?: Maybe<string>
   feature_image?: Maybe<string>
   html?: Maybe<string>
+  medium_url?: Maybe<string>
 }
 
 export type RepoInfoFragment = {
@@ -334,6 +382,7 @@ export const PostInfoFragmentDoc = gql`
     excerpt
     feature_image
     html
+    medium_url
   }
 `
 export const RepoInfoFragmentDoc = gql`
@@ -663,7 +712,6 @@ export type AddBookmarkReactionMutationOptions = Apollo.BaseMutationOptions<
   AddBookmarkReactionMutation,
   AddBookmarkReactionMutationVariables
 >
-
 export const GetBookmarksDocument = gql`
   query GetBookmarks($skip: Int, $category: String) {
     bookmarks(skip: $skip, category: $category) {

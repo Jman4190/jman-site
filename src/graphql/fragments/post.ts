@@ -10,5 +10,6 @@ export const PostInfoFragment = gql`
     excerpt
     feature_image
     html
+    medium_url
   }
 `

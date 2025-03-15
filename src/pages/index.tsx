@@ -29,7 +29,7 @@ function Home({ data }: Props) {
                 <Link href="/writing" passHref>
                   <a>blog posts</a>
                 </Link>,{' '} 
-                <a href="https://www.getrevue.co/profile/jman4190">monthly newsletter</a>,{' '}
+                <a href="https://johnmannelly.substack.com/">monthly newsletter</a>,{' '}
                  or following my breadcrumbs on{' '}
                 <a href="https://twitter.com/learnwithjabe">Twitter</a>.
                 I&apos;m currently working in product at {' '}
@@ -55,9 +55,9 @@ function Home({ data }: Props) {
                   <Button>Blog posts</Button>
                 </a>
               </Link>
-              <Link href="https://www.polywork.com/jman4190" passHref>
+              <Link href="https://www.linkedin.com/in/johnmannelly" passHref>
                 <a>
-                  <Button>My Changelog</Button>
+                  <Button>Linkedin</Button>
                 </a>
               </Link>
             </div>

@@ -6,6 +6,32 @@ function ProjectsList() {
     <div className="space-y-6">
       <div className="space-y-1">
         <a
+          href="https://smalltalesbooks.com"
+          className="font-medium highlight-link-hover"
+        >
+          Small Tales
+        </a>
+
+        <p className="text-tertiary">
+          A custom next.js web app to transform a picture of your child into a custom character illustration book using AI.
+        </p>
+      </div>
+
+      <div className="space-y-1">
+        <a
+          href="https://nbaconnections.app"
+          className="font-medium highlight-link-hover"
+        >
+          NBA Connections
+        </a>
+
+        <p className="text-tertiary">
+          A custom web app inspired by NYT Connections where you Group NBA players that share a common thread.
+        </p>
+      </div>
+
+      <div className="space-y-1">
+        <a
           href="https://www.youtube.com/channel/UCOuzm2rfhw0ZXm-UyBVQ_8A"
           className="font-medium highlight-link-hover"
         >

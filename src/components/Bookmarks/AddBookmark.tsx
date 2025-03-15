@@ -46,15 +46,18 @@ export default function AddBookmark() {
       setTwitterHandle('')
     },
     update(cache, { data: { addBookmark } }) {
-      const { bookmarks } = cache.readQuery({
+      const data = cache.readQuery<{ bookmarks: any[] }>({
         query,
         variables: { category: router.query.category },
       })
+
+      if (!data) return
+
       cache.writeQuery({
         query,
         variables: { category: router.query.category },
         data: {
-          bookmarks: [addBookmark, ...bookmarks],
+          bookmarks: [addBookmark, ...data.bookmarks],
         },
       })
     },

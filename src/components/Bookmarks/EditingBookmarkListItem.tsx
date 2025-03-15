@@ -98,15 +98,18 @@ export default function EditingBookmarkListItem(props: Props) {
       __typename: 'Mutation',
     },
     update(cache) {
-      const { bookmarks } = cache.readQuery({
+      const data = cache.readQuery<{ bookmarks: Bookmark[] }>({
         query: GET_BOOKMARKS,
         variables: { category },
       })
+
+      if (!data) return
+
       cache.writeQuery({
         query: GET_BOOKMARKS,
         variables: { category },
         data: {
-          bookmarks: bookmarks.filter((o) => o.id !== bookmark.id),
+          bookmarks: data.bookmarks.filter((o) => o.id !== bookmark.id),
         },
       })
     },

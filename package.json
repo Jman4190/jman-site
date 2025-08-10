@@ -114,5 +114,8 @@
     ]
   },
   "pre-commit": "lint:staged && generate",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "22.x"
+  }
 }

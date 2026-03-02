@@ -9,6 +9,7 @@ const defaultRoutes = [
   routes.about,
   routes.writing,
   routes.projects,
+  routes.bookshelf,
 ]
 
 export default function Header() {
@@ -56,9 +57,18 @@ export default function Header() {
       {/* End mobile nav */}
 
       {/* Desktop nav */}
-      <div className="hidden max-w-screen-md grid-cols-4 gap-1 mx-auto md:grid">
+      <div
+        className="hidden max-w-screen-lg gap-1 mx-auto md:grid"
+        style={{
+          gridTemplateColumns: `repeat(${defaultRoutes.length}, minmax(0, 1fr))`,
+        }}
+      >
         {defaultRoutes.map((route) => {
-          const isActive = route.path === router.pathname
+          const isActive =
+            route.path === '/'
+              ? router.pathname === '/'
+              : router.pathname === route.path ||
+                router.pathname.indexOf(`${route.path}/`) === 0
           const defaultClasses = `font-sans font-semibold flex rounded items-center text-opacity-40 justify-center py-2 text-sm`
           const activeClasses = `bg-gray-1000 bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur`
           const inactiveClasses = `hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-white dark:text-white  hover:text-gray-1000 dark:hover:text-gray-100 text-tertiary`

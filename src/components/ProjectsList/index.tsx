@@ -13,7 +13,8 @@ function ProjectsList() {
         </a>
 
         <p className="text-tertiary">
-          A custom next.js web app to transform a picture of your child into a custom character illustration book using AI.
+          A custom next.js web app to transform a picture of your child into a
+          custom character illustration book using AI.
         </p>
       </div>
 
@@ -26,7 +27,8 @@ function ProjectsList() {
         </a>
 
         <p className="text-tertiary">
-          A custom web app inspired by NYT Connections where you Group NBA players that share a common thread.
+          A custom web app inspired by NYT Connections where you Group NBA
+          players that share a common thread.
         </p>
       </div>
 
@@ -39,8 +41,9 @@ function ProjectsList() {
         </a>
 
         <p className="text-tertiary">
-          A YouTube channel featuring Jabe Jableson, a struggling influencer and aspiring edutainer.
-          Learn to code by doing hands-on projects with NBA data, GPT-3 and Spotify APIs.
+          A YouTube channel featuring Jabe Jableson, a struggling influencer and
+          aspiring edutainer. Learn to code by doing hands-on projects with NBA
+          data, GPT-3 and Spotify APIs.
         </p>
       </div>
 
@@ -53,8 +56,8 @@ function ProjectsList() {
         </a>
 
         <p className="text-tertiary">
-          In this Udemy class you'll build an NBA Fantasy Projection model in python with Pandas.
-          DM me on Twitter to get a free code.
+          In this Udemy class you'll build an NBA Fantasy Projection model in
+          python with Pandas. DM me on Twitter to get a free code.
         </p>
       </div>
 
@@ -67,7 +70,8 @@ function ProjectsList() {
         </a>
 
         <p className="text-tertiary">
-          A custom Webflow site where Drake fans upvoted his top 100 songs of all time.
+          A custom Webflow site where Drake fans upvoted his top 100 songs of
+          all time.
         </p>
       </div>
 
@@ -80,7 +84,8 @@ function ProjectsList() {
         </a>
 
         <p className="text-tertiary">
-          In this free Udemy class you'll build a Twitter bot that automatically retweets your likes.
+          In this free Udemy class you'll build a Twitter bot that automatically
+          retweets your likes.
         </p>
       </div>
 
@@ -93,7 +98,8 @@ function ProjectsList() {
         </a>
 
         <p className="text-tertiary">
-          A sports podcast with the Lupica brothers. Just three brothers, chopping it up.
+          A sports podcast with the Lupica brothers. Just three brothers,
+          chopping it up.
         </p>
       </div>
 
@@ -102,7 +108,19 @@ function ProjectsList() {
           <a className="font-medium highlight-link-hover">Bookmarks</a>
         </Link>
 
-        <p className="text-tertiary">Internet masterpieces that I'm constantly referencing.</p>
+        <p className="text-tertiary">
+          Internet masterpieces that I'm constantly referencing.
+        </p>
+      </div>
+
+      <div className="space-y-1">
+        <Link passHref href="/bookshelf">
+          <a className="font-medium highlight-link-hover">Bookshelf</a>
+        </Link>
+
+        <p className="text-tertiary">
+          An interactive shelf of books with favorite quote collections.
+        </p>
       </div>
     </div>
   )

@@ -12,6 +12,7 @@ export default function SEO() {
   if (router.route.indexOf('/writing') === 0) emoji = '🤔'
   if (router.route.indexOf('/app-dissection') === 0) emoji = '✨'
   if (router.route.indexOf('/bookmarks') === 0) emoji = '📖'
+  if (router.route.indexOf('/bookshelf') === 0) emoji = '📚'
 
   return (
     <React.Fragment>
@@ -25,10 +26,7 @@ export default function SEO() {
           color={'#050505'}
         />
         <link rel="manifest" href="/static/meta/manifest.json" />
-        <link
-          rel="icon"
-          href="/static/favicon.ico"
-        />
+        <link rel="icon" href="/static/favicon.ico" />
       </Head>
     </React.Fragment>
   )

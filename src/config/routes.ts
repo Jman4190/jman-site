@@ -23,6 +23,16 @@ const routes = {
       url: 'projects',
     }),
   },
+  bookshelf: {
+    label: 'Bookshelf',
+    path: '/bookshelf',
+    seo: extendSEO({
+      title: 'Bookshelf',
+      description: 'An interactive bookshelf of books I have read and loved.',
+      image: 'meta/bookmarks.png',
+      url: 'bookshelf',
+    }),
+  },
   writing: {
     label: 'Writing',
     path: '/writing',

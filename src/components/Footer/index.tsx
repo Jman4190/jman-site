@@ -25,7 +25,7 @@ export function Footer() {
           <Link href="/writing" as="/writing" passHref>
             <a className="black-link">Writing</a>
           </Link>
-          
+
           <Link href="/app-dissection" as="/app-dissection" passHref>
             <a className="black-link">App Dissection</a>
           </Link>
@@ -36,6 +36,9 @@ export function Footer() {
             <a className="black-link">Bookmarks</a>
           </Link>
 
+          <Link href="/bookshelf" as="/bookshelf" passHref>
+            <a className="black-link">Bookshelf</a>
+          </Link>
         </div>
       </div>
     </CenteredColumn>

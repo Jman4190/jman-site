@@ -7,7 +7,7 @@ import AddBookmark from '~/components/Bookmarks/AddBookmark'
 import { CenteredColumn } from '~/components/Layouts'
 import BookmarksNavigation from '~/components/Bookmarks/BookmarksNavigation'
 import routes from '~/config/routes'
-import Link from 'next/link'
+import BackLink from '~/components/BackLink'
 
 export default function BookmarksPage({ category }) {
   const { isMe } = useAuth()
@@ -22,11 +22,7 @@ export default function BookmarksPage({ category }) {
 
       <CenteredColumn>
         <div data-cy="bookmarks" className="space-y-8">
-          <Link href="/projects" passHref>
-            <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-              &larr; Projects
-            </a>
-          </Link>
+          <BackLink href="/projects" label="Projects" />
           <PageHeader
             title="Bookmarks"
             subtitle="Internet masterpieces that I'm constantly referencing'."

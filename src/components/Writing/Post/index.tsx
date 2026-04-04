@@ -4,7 +4,7 @@ import WritingSubscribeBox from '~/components/Writing/Subscribe'
 import SyntaxHighlighter from '~/components/SyntaxHighlighter'
 import SEO from './SEO'
 import { CenteredColumn } from '~/components/Layouts'
-import Link from 'next/link'
+import BackLink from '~/components/BackLink'
 
 interface Props {
   post: Post
@@ -24,11 +24,7 @@ export default function PostView({ post }: Props) {
 
       <CenteredColumn>
         <div data-cy="post" className="space-y-8 ">
-          <Link href="/writing" passHref>
-            <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-              &larr; Writing
-            </a>
-          </Link>
+          <BackLink href="/writing" label="Writing" />
           <div className="space-y-4">
             <h1 className="font-sans text-2xl font-extrabold md:text-4xl text-primary">
               {post.title}

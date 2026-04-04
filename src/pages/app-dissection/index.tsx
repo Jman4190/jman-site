@@ -5,7 +5,7 @@ import DesignDetailsGrid from '~/components/DesignDetailsGrid'
 import { summaries } from '~/data/appDissections'
 import { CenteredColumn } from '~/components/Layouts'
 import routes from '~/config/routes'
-import Link from 'next/link'
+import BackLink from '~/components/BackLink'
 
 export default function DesignDetails() {
   return (
@@ -18,11 +18,7 @@ export default function DesignDetails() {
 
       <CenteredColumn>
         <div className="space-y-8 ">
-          <Link href="/projects" passHref>
-            <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-              &larr; Projects
-            </a>
-          </Link>
+          <BackLink href="/projects" label="Projects" />
 
           <PageHeader
             title="App Dissection"

@@ -6,7 +6,7 @@ import { withApollo } from '~/components/withApollo'
 import { CenteredColumn } from '~/components/Layouts'
 import Recommendations from '~/components/Stack/Recommendations'
 import routes from '~/config/routes'
-import Link from 'next/link'
+import BackLink from '~/components/BackLink'
 
 function Stack() {
   return (
@@ -19,11 +19,7 @@ function Stack() {
 
       <CenteredColumn>
         <div className="space-y-8">
-          <Link href="/projects" passHref>
-            <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-              &larr; Projects
-            </a>
-          </Link>
+          <BackLink href="/projects" label="Projects" />
           <PageHeader
             title="Stack"
             subtitle="My favorite tools and software."

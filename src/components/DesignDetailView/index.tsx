@@ -6,7 +6,7 @@ import { DesignDetailsPost } from '~/data/appDissections'
 import { CenteredColumn } from '../Layouts'
 import { PageHeader } from '../Page'
 import Image from 'next/image'
-import Link from 'next/link'
+import BackLink from '~/components/BackLink'
 import WritingSubscribeBox from '../Writing/Subscribe'
 
 interface Props {
@@ -23,11 +23,7 @@ export default function DesignDetailView(props: Props) {
   return (
     <CenteredColumn>
       <div className="space-y-8">
-        <Link href="/app-dissection" passHref>
-          <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-            &larr; App Dissection
-          </a>
-        </Link>
+        <BackLink href="/app-dissection" label="App Dissection" />
 
         <div className="flex items-center space-x-4">
           <Image

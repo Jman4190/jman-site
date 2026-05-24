@@ -201,5 +201,13 @@ export const mediumPosts: MediumPost[] = [
     excerpt: 'Ever find yourself playing the NYT Connections game and thinking “I could build this, but for [insert passion here]”? That’s exactly what happened to me with NBA Connections',
     medium_url: 'https://jman4190.medium.com/building-a-nba-connections-web-app-64a76a3faa35'
   },
+  {
+    id: '25',
+    title: 'Side Projects Are Slingshots',
+    slug: 'side-projects-are-slingshots-49cf1608e29f',
+    published_at: '2026-05-24T02:38:47.000Z',
+    excerpt: 'How building weird little things can help you learn faster, stay current, and launch yourself into new opportunities',
+    medium_url: 'https://jman4190.medium.com/side-projects-are-slingshots-49cf1608e29f'
+  },
   // Add more posts as needed
-]; 
+];

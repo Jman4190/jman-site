@@ -6,6 +6,16 @@ const firstBook = {
   title: 'Antifragile: Things That Gain From Disorder',
 }
 
+const mergedBook = {
+  slug: 'competing-against-luck-the-story-of-innovation-and-customer-choice',
+  duplicateSlug: 'competing-against-luck',
+}
+
+const scoreBook = {
+  slug: 'the-score-takes-care-of-itself',
+  title: 'The Score Takes Care of Itself',
+}
+
 describe('Bookshelf', () => {
   before(() => {
     cy.visit('/bookshelf')
@@ -18,6 +28,13 @@ describe('Bookshelf', () => {
 
   it('should show at least one book', () => {
     cy.get('[data-cy="bookshelf-book-link"]').its('length').should('be.gte', 1)
+  })
+
+  it('should only show one entry for duplicate title variants', () => {
+    cy.get(`[data-book-slug="${mergedBook.slug}"]`).should('have.length', 1)
+    cy.get(`[data-book-slug="${mergedBook.duplicateSlug}"]`).should('not.exist')
+    cy.get('[data-book-slug="the-tao-of-physics"]').should('have.length', 1)
+    cy.get('[data-book-slug="tao-of-physics"]').should('not.exist')
   })
 
   it('should use 3 books per row on phone widths', () => {
@@ -53,5 +70,26 @@ describe('Bookshelf', () => {
     cy.location('pathname').should('eq', `/bookshelf/${firstBook.slug}`)
     cy.get('[data-cy="bookshelf-detail-title"]').contains(firstBook.title)
     cy.get('[data-cy="bookshelf-quote"]').its('length').should('be.gte', 1)
+    cy.get('[data-cy="bookshelf-takeaway"]').its('length').should('be.gte', 1)
+    cy.get('[data-cy="bookshelf-takeaway"]')
+      .first()
+      .should('not.contain', 'KT:')
+  })
+
+  it('should render a book detail page cleanly on phone widths', () => {
+    cy.viewport('iphone-6')
+    cy.visit('/bookshelf')
+    cy.get(`[data-book-slug="${scoreBook.slug}"]`).click({ force: true })
+    cy.get(`[data-book-slug="${scoreBook.slug}"]`).click({ force: true })
+    cy.location('pathname').should('eq', `/bookshelf/${scoreBook.slug}`)
+    cy.get('[data-cy="bookshelf-detail-page"]').should('be.visible')
+    cy.get('[data-cy="bookshelf-detail-title"]').contains(scoreBook.title)
+    cy.get('[data-cy="bookshelf-quote"]').its('length').should('be.gte', 1)
+    cy.get('[data-cy="bookshelf-takeaway"]').its('length').should('be.gte', 1)
+    cy.window().then((win) => {
+      expect(win.document.documentElement.scrollWidth).to.be.at.most(
+        win.innerWidth + 1
+      )
+    })
   })
 })

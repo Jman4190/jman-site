@@ -1,6 +1,9 @@
+import { bookshelfQuotesByTitle } from './bookshelfQuotes'
+
 export interface BookshelfQuote {
   id: string
   text: string
+  takeaway?: string
   source?: string
 }
 
@@ -40,30 +43,6 @@ const textColors = [
   'rgb(227, 245, 236)',
 ]
 
-function createPlaceholderQuotes(
-  title: string,
-  author: string,
-  index: number
-): BookshelfQuote[] {
-  return [
-    {
-      id: `${index + 1}-q1`,
-      text: `Placeholder quote one from ${title}. Replace this with one of your all-time favorites.`,
-      source: `${author}, chapter ${((index % 8) + 1).toString()}`,
-    },
-    {
-      id: `${index + 1}-q2`,
-      text: `Placeholder quote two from ${title}. This slot is ready for a second standout passage.`,
-      source: `${author}, page ${((index + 1) * 7).toString()}`,
-    },
-    {
-      id: `${index + 1}-q3`,
-      text: `Placeholder quote three from ${title}. Add the line that made this book unforgettable.`,
-      source: `${author}, notes`,
-    },
-  ]
-}
-
 function titleToSlug(title: string): string {
   return title
     .toLowerCase()
@@ -82,37 +61,48 @@ interface BookSource {
 }
 
 const bookSources: BookSource[] = [
-  { title: 'Antifragile: Things That Gain From Disorder', author: 'Nassim Taleb' },
+  {
+    title: 'Antifragile: Things That Gain From Disorder',
+    author: 'Nassim Taleb',
+  },
   { title: 'Benjamin Franklin: An American Life', author: 'Walter Isaacson' },
-  { title: 'Boomerang: Travels in the New Third World', author: 'Michael Lewis' },
+  {
+    title: 'Boomerang: Travels in the New Third World',
+    author: 'Michael Lewis',
+  },
   { title: 'Caesar: Life of a Colossus', author: 'Adrian Goldsworthy' },
   {
-    title: 'Chaos Monkeys: Obscene Fortune and Random Failure in Silicon Valley',
+    title:
+      'Chaos Monkeys: Obscene Fortune and Random Failure in Silicon Valley',
     author: 'Antonio Garcia Martinez',
   },
   { title: 'Chasing Perfection', author: 'Andy Glockner' },
-  { title: 'Competing Against Luck', author: 'Clayton M. Christensen' },
   {
-    title: 'Competing Against Luck: The Story of Innovation and Customer Choice',
+    title:
+      'Competing Against Luck: The Story of Innovation and Customer Choice',
     author: 'Clayton M. Christensen',
   },
   { title: 'Contagious: Why Things Catch On', author: 'Jonah Berger' },
   {
-    title: 'Creativity Inc: Overcoming the Unseen Forces That Stand in the Way of True Inspiration',
+    title:
+      'Creativity Inc: Overcoming the Unseen Forces That Stand in the Way of True Inspiration',
     author: 'Ed Catmull',
   },
   {
-    title: 'Crossing the Chasm: Marketing and Selling Disruptive Products to Mainstream Customers',
+    title:
+      'Crossing the Chasm: Marketing and Selling Disruptive Products to Mainstream Customers',
     author: 'Geoffrey Moore',
   },
   {
-    title: 'David and Goliath: Underdogs Misfits and the Art of Battling Giants',
+    title:
+      'David and Goliath: Underdogs Misfits and the Art of Battling Giants',
     author: 'Malcolm Gladwell',
   },
   { title: 'Eleven Rings: The Soul of Success', author: 'Phil Jackson' },
   { title: 'Everyday Zen (Plus)', author: 'Charlotte Joko Beck' },
   {
-    title: 'Hatching Twitter: A True Story About Money Power Friendship and Betrayal',
+    title:
+      'Hatching Twitter: A True Story About Money Power Friendship and Betrayal',
     author: 'Nick Bilton',
   },
   { title: 'High Output Management', author: 'Andy Grove' },
@@ -131,19 +121,27 @@ const bookSources: BookSource[] = [
   { title: "Man's Search for Meaning", author: 'Viktor E. Frankl' },
   { title: 'Next: The Future Just Happened', author: 'Michael Lewis' },
   {
-    title: 'Permission Marketing: Turning Strangers Into Friends and Friends Into Customers',
+    title:
+      'Permission Marketing: Turning Strangers Into Friends and Friends Into Customers',
     author: 'Seth Godin',
   },
   {
     title: 'Platform Revolution',
-    author: 'Geoffrey G. Parker / Marshall W. Van Alstyne / Sangeet Paul Choudary',
+    author:
+      'Geoffrey G. Parker / Marshall W. Van Alstyne / Sangeet Paul Choudary',
   },
-  { title: 'Positioning: The Battle For Your Mind', author: 'Al Ries and Jack Trout' },
+  {
+    title: 'Positioning: The Battle For Your Mind',
+    author: 'Al Ries and Jack Trout',
+  },
   { title: 'Predictive Analytics', author: 'Eric Siegel' },
   { title: "Prisoner's Dilemma", author: 'William Poundstone' },
   { title: 'Rainbows End', author: 'Vernor Vinge' },
   { title: 'Sam Walton: Made in America', author: 'Sam Walton' },
-  { title: 'Sapiens: A Brief History of Humankind', author: 'Yuval Noah Harari' },
+  {
+    title: 'Sapiens: A Brief History of Humankind',
+    author: 'Yuval Noah Harari',
+  },
   { title: 'Seneca', author: 'Lucius Annaeus Seneca' },
   { title: 'Shoe Dog', author: 'Phil Knight' },
   { title: 'Snow Crash', author: 'Neal Stephenson' },
@@ -155,7 +153,6 @@ const bookSources: BookSource[] = [
     title: 'Superforecasting: The Art and Science of Prediction',
     author: 'Philip E. Tetlock and Dan Gardner',
   },
-  { title: 'Tao of Physics', author: 'Fritjof Capra' },
   { title: 'Television: A Biography', author: 'David Thomson' },
   { title: 'Thank You For Being Late', author: 'Thomas L. Friedman' },
   { title: 'The Art of War', author: 'Sun Tzu' },
@@ -209,7 +206,7 @@ function buildBookshelfBooks(): BookshelfBook[] {
       coverImage,
       spineColor,
       textColor,
-      quotes: createPlaceholderQuotes(title, author, index),
+      quotes: bookshelfQuotesByTitle[title] ?? [],
     }
   })
 }

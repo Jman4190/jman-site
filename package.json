@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "NODE_OPTIONS='--openssl-legacy-provider' next",
-    "build": "next build",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' next build",
     "start": "next start",
     "lint": "eslint ./src/pages/* ./src/components/* ./src/api/* ./src/data/* ./src/graphql/* ./src/lib/* ./src/types/* -c .eslintrc.json --fix --ext ts,tsx",
     "cypress:open": "cypress open",

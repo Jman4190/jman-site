@@ -32,7 +32,7 @@ export default function BookshelfBookPage({ book }: Props) {
 
   if (!book) return null
 
-  const description = `Favorite quotes from ${book.title}.`
+  const description = `Favorite quotes and key takeaways from ${book.title}.`
 
   return (
     <Page>
@@ -75,27 +75,48 @@ export default function BookshelfBookPage({ book }: Props) {
                 {book.title}
               </h1>
               {book.author && <p className="text-tertiary">By {book.author}</p>}
-              <p className="text-tertiary">Favorite quotes from this book.</p>
+              <p className="text-tertiary">
+                Favorite quotes and key takeaways from this book.
+              </p>
             </div>
           </div>
 
           <div className="space-y-5">
-            {book.quotes.map((quote) => (
-              <blockquote
-                key={quote.id}
-                data-cy="bookshelf-quote"
-                className="p-5 bg-elevated rounded-lg border border-gray-200 dark:border-gray-800"
-              >
-                <p className="text-lg leading-relaxed text-primary">
-                  "{quote.text}"
-                </p>
-                {quote.source && (
-                  <cite className="block mt-3 not-italic text-sm text-tertiary">
-                    {quote.source}
-                  </cite>
-                )}
-              </blockquote>
-            ))}
+            {book.quotes.length > 0 ? (
+              book.quotes.map((quote) => (
+                <blockquote
+                  key={quote.id}
+                  data-cy="bookshelf-quote"
+                  className="p-5 bg-elevated rounded-lg border border-gray-200 dark:border-gray-800"
+                >
+                  <p className="text-lg leading-relaxed text-primary">
+                    {quote.text}
+                  </p>
+                  {quote.takeaway && (
+                    <div
+                      data-cy="bookshelf-takeaway"
+                      className="pl-4 mt-4 border-l-2 border-gray-300 dark:border-gray-700"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-widest text-tertiary">
+                        Key takeaway
+                      </p>
+                      <p className="mt-2 leading-relaxed text-secondary">
+                        {quote.takeaway}
+                      </p>
+                    </div>
+                  )}
+                  {quote.source && (
+                    <cite className="block mt-3 not-italic text-sm text-tertiary">
+                      {quote.source}
+                    </cite>
+                  )}
+                </blockquote>
+              ))
+            ) : (
+              <p className="text-tertiary">
+                No quotes are saved for this book yet.
+              </p>
+            )}
           </div>
         </div>
       </CenteredColumn>

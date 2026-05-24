@@ -39,11 +39,11 @@ function About() {
                   <a href="https://www.getrevue.co/profile/jman4190">monthly newsletter</a>,{' '}
                   or following my breadcrumbs on{' '}
                   <a href="https://twitter.com/learnwithjabe">Twitter</a>.
-                  I&apos;m currently working in product at {' '}
-                  <a href="https://www.houzz.com">
-                    Houzz
+                  I&apos;m currently working in product at{' '}
+                  <a href="https://www.rula.com/">
+                    Rula
                   </a>
-                  .
+                  . Previous at Houzz.
               </p>
               <p>
                 In my free time I focus on {' '}

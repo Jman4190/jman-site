@@ -32,11 +32,11 @@ function Home({ data }: Props) {
                 <a href="https://johnmannelly.substack.com/">monthly newsletter</a>,{' '}
                  or following my breadcrumbs on{' '}
                 <a href="https://twitter.com/learnwithjabe">Twitter</a>.
-                I&apos;m currently working in product at {' '}
-                <a href="https://www.houzz.com">
-                  Houzz
+                I&apos;m currently working in product at{' '}
+                <a href="https://www.rula.com/">
+                  Rula
                 </a>
-                . 3x{' '}
+                . Previous at Houzz. 3x{' '}
                 <a href="https://www.reforge.com">Reforge</a>
                 {' '} alum.
               </p>

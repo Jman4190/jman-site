@@ -1,18 +1,9 @@
 import * as React from 'react'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
 import { defaultSEO } from '~/config/seo'
 
 export default function SEO() {
-  const router = useRouter()
-
-  let emoji = '👾'
-  if (router.route.indexOf('/about') === 0) emoji = '👋'
-  if (router.route.indexOf('/writing') === 0) emoji = '🤔'
-  if (router.route.indexOf('/app-dissection') === 0) emoji = '✨'
-  if (router.route.indexOf('/bookmarks') === 0) emoji = '📖'
-
   return (
     <React.Fragment>
       <DefaultSeo {...defaultSEO} />
@@ -25,10 +16,7 @@ export default function SEO() {
           color={'#050505'}
         />
         <link rel="manifest" href="/static/meta/manifest.json" />
-        <link
-          rel="icon"
-          href="/static/favicon.ico"
-        />
+        <link rel="icon" href="/static/favicon.ico" />
       </Head>
     </React.Fragment>
   )

@@ -40,23 +40,6 @@ export enum AmaStatus {
   Answered = 'ANSWERED',
 }
 
-export type Bookmark = {
-  __typename?: 'Bookmark'
-  id: Scalars['ID']
-  url: Scalars['String']
-  author?: Maybe<Scalars['String']>
-  creator?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  image?: Maybe<Scalars['String']>
-  site_name?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  host?: Maybe<Scalars['String']>
-  reactions?: Maybe<Scalars['Int']>
-  notes?: Maybe<Scalars['String']>
-  category?: Maybe<Scalars['String']>
-  twitterHandle?: Maybe<Scalars['String']>
-}
-
 export type Episode = {
   __typename?: 'Episode'
   id?: Maybe<Scalars['String']>
@@ -73,10 +56,6 @@ export type Mutation = {
   __typename?: 'Mutation'
   login?: Maybe<Scalars['Boolean']>
   logout?: Maybe<Scalars['Boolean']>
-  addBookmark?: Maybe<Bookmark>
-  editBookmark?: Maybe<Bookmark>
-  deleteBookmark?: Maybe<Scalars['Boolean']>
-  addBookmarkReaction?: Maybe<Bookmark>
   addAMAQuestion?: Maybe<Scalars['Boolean']>
   deleteAMAQuestion?: Maybe<Scalars['Boolean']>
   editAMAQuestion?: Maybe<Ama>
@@ -85,29 +64,6 @@ export type Mutation = {
 
 export type MutationLoginArgs = {
   password: Scalars['String']
-}
-
-export type MutationAddBookmarkArgs = {
-  url: Scalars['String']
-  notes?: Maybe<Scalars['String']>
-  category?: Maybe<Scalars['String']>
-  twitterHandle?: Maybe<Scalars['String']>
-}
-
-export type MutationEditBookmarkArgs = {
-  id: Scalars['ID']
-  title: Scalars['String']
-  notes?: Maybe<Scalars['String']>
-  category?: Maybe<Scalars['String']>
-  twitterHandle?: Maybe<Scalars['String']>
-}
-
-export type MutationDeleteBookmarkArgs = {
-  id: Scalars['ID']
-}
-
-export type MutationAddBookmarkReactionArgs = {
-  id: Scalars['ID']
 }
 
 export type MutationAddAmaQuestionArgs = {
@@ -163,18 +119,12 @@ export type Post = {
 
 export type Query = {
   __typename?: 'Query'
-  bookmarks: Array<Maybe<Bookmark>>
   episodes: Array<Maybe<Episode>>
   posts: Array<Maybe<Post>>
   post?: Maybe<Post>
   amaQuestions: Array<Maybe<Ama>>
   repos: Array<Maybe<Repo>>
   isMe?: Maybe<Scalars['Boolean']>
-}
-
-export type QueryBookmarksArgs = {
-  skip?: Maybe<Scalars['Int']>
-  category?: Maybe<Scalars['String']>
 }
 
 export type QueryPostsArgs = {
@@ -196,18 +146,6 @@ export type Repo = {
   name?: Maybe<Scalars['String']>
   description?: Maybe<Scalars['String']>
   stars?: Maybe<Scalars['Int']>
-}
-
-export type BookmarkInfoFragment = {
-  __typename: 'Bookmark'
-  id: string
-  title?: Maybe<string>
-  url: string
-  host?: Maybe<string>
-  reactions?: Maybe<number>
-  notes?: Maybe<string>
-  category?: Maybe<string>
-  twitterHandle?: Maybe<string>
 }
 
 export type EpisodeInfoFragment = {
@@ -256,61 +194,6 @@ export type LogoutMutation = {
   logout?: Maybe<boolean>
 }
 
-export type EditBookmarkMutationVariables = Exact<{
-  id: Scalars['ID']
-  title: Scalars['String']
-  notes?: Maybe<Scalars['String']>
-  category?: Maybe<Scalars['String']>
-  twitterHandle?: Maybe<Scalars['String']>
-}>
-
-export type EditBookmarkMutation = {
-  __typename?: 'Mutation'
-  editBookmark?: Maybe<{ __typename?: 'Bookmark' } & BookmarkInfoFragment>
-}
-
-export type DeleteBookmarkMutationVariables = Exact<{
-  id: Scalars['ID']
-}>
-
-export type DeleteBookmarkMutation = {
-  __typename?: 'Mutation'
-  deleteBookmark?: Maybe<boolean>
-}
-
-export type AddBookmarkMutationVariables = Exact<{
-  url: Scalars['String']
-  notes?: Maybe<Scalars['String']>
-  category?: Maybe<Scalars['String']>
-  twitterHandle?: Maybe<Scalars['String']>
-}>
-
-export type AddBookmarkMutation = {
-  __typename?: 'Mutation'
-  addBookmark?: Maybe<{ __typename?: 'Bookmark' } & BookmarkInfoFragment>
-}
-
-export type AddBookmarkReactionMutationVariables = Exact<{
-  id: Scalars['ID']
-}>
-
-export type AddBookmarkReactionMutation = {
-  __typename?: 'Mutation'
-  addBookmarkReaction?: Maybe<
-    { __typename?: 'Bookmark' } & BookmarkInfoFragment
-  >
-}
-
-export type GetBookmarksQueryVariables = Exact<{
-  skip?: Maybe<Scalars['Int']>
-  category?: Maybe<Scalars['String']>
-}>
-
-export type GetBookmarksQuery = {
-  __typename?: 'Query'
-  bookmarks: Array<Maybe<{ __typename?: 'Bookmark' } & BookmarkInfoFragment>>
-}
-
 export type GetEpisodesQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetEpisodesQuery = {
@@ -323,7 +206,6 @@ export type GetHomeQueryVariables = Exact<{ [key: string]: never }>
 export type GetHomeQuery = {
   __typename?: 'Query'
   posts: Array<Maybe<{ __typename?: 'Post' } & PostInfoFragment>>
-  episodes: Array<Maybe<{ __typename?: 'Episode' } & EpisodeInfoFragment>>
 }
 
 export type IsMeQueryVariables = Exact<{ [key: string]: never }>
@@ -347,19 +229,6 @@ export type GetPostQuery = {
   post?: Maybe<{ __typename?: 'Post' } & PostInfoFragment>
 }
 
-export const BookmarkInfoFragmentDoc = gql`
-  fragment BookmarkInfo on Bookmark {
-    __typename
-    id
-    title
-    url
-    host
-    reactions
-    notes
-    category
-    twitterHandle
-  }
-`
 export const EpisodeInfoFragmentDoc = gql`
   fragment EpisodeInfo on Episode {
     id
@@ -482,296 +351,6 @@ export type LogoutMutationOptions = Apollo.BaseMutationOptions<
   LogoutMutation,
   LogoutMutationVariables
 >
-export const EditBookmarkDocument = gql`
-  mutation editBookmark(
-    $id: ID!
-    $title: String!
-    $notes: String
-    $category: String
-    $twitterHandle: String
-  ) {
-    editBookmark(
-      id: $id
-      title: $title
-      notes: $notes
-      category: $category
-      twitterHandle: $twitterHandle
-    ) {
-      ...BookmarkInfo
-    }
-  }
-  ${BookmarkInfoFragmentDoc}
-`
-export type EditBookmarkMutationFn = Apollo.MutationFunction<
-  EditBookmarkMutation,
-  EditBookmarkMutationVariables
->
-
-/**
- * __useEditBookmarkMutation__
- *
- * To run a mutation, you first call `useEditBookmarkMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useEditBookmarkMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [editBookmarkMutation, { data, loading, error }] = useEditBookmarkMutation({
- *   variables: {
- *      id: // value for 'id'
- *      title: // value for 'title'
- *      notes: // value for 'notes'
- *      category: // value for 'category'
- *      twitterHandle: // value for 'twitterHandle'
- *   },
- * });
- */
-export function useEditBookmarkMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    EditBookmarkMutation,
-    EditBookmarkMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    EditBookmarkMutation,
-    EditBookmarkMutationVariables
-  >(EditBookmarkDocument, options)
-}
-export type EditBookmarkMutationHookResult = ReturnType<
-  typeof useEditBookmarkMutation
->
-export type EditBookmarkMutationResult =
-  Apollo.MutationResult<EditBookmarkMutation>
-export type EditBookmarkMutationOptions = Apollo.BaseMutationOptions<
-  EditBookmarkMutation,
-  EditBookmarkMutationVariables
->
-export const DeleteBookmarkDocument = gql`
-  mutation deleteBookmark($id: ID!) {
-    deleteBookmark(id: $id)
-  }
-`
-export type DeleteBookmarkMutationFn = Apollo.MutationFunction<
-  DeleteBookmarkMutation,
-  DeleteBookmarkMutationVariables
->
-
-/**
- * __useDeleteBookmarkMutation__
- *
- * To run a mutation, you first call `useDeleteBookmarkMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useDeleteBookmarkMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [deleteBookmarkMutation, { data, loading, error }] = useDeleteBookmarkMutation({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useDeleteBookmarkMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    DeleteBookmarkMutation,
-    DeleteBookmarkMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    DeleteBookmarkMutation,
-    DeleteBookmarkMutationVariables
-  >(DeleteBookmarkDocument, options)
-}
-export type DeleteBookmarkMutationHookResult = ReturnType<
-  typeof useDeleteBookmarkMutation
->
-export type DeleteBookmarkMutationResult =
-  Apollo.MutationResult<DeleteBookmarkMutation>
-export type DeleteBookmarkMutationOptions = Apollo.BaseMutationOptions<
-  DeleteBookmarkMutation,
-  DeleteBookmarkMutationVariables
->
-export const AddBookmarkDocument = gql`
-  mutation addBookmark(
-    $url: String!
-    $notes: String
-    $category: String
-    $twitterHandle: String
-  ) {
-    addBookmark(
-      url: $url
-      notes: $notes
-      category: $category
-      twitterHandle: $twitterHandle
-    ) {
-      ...BookmarkInfo
-    }
-  }
-  ${BookmarkInfoFragmentDoc}
-`
-export type AddBookmarkMutationFn = Apollo.MutationFunction<
-  AddBookmarkMutation,
-  AddBookmarkMutationVariables
->
-
-/**
- * __useAddBookmarkMutation__
- *
- * To run a mutation, you first call `useAddBookmarkMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useAddBookmarkMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [addBookmarkMutation, { data, loading, error }] = useAddBookmarkMutation({
- *   variables: {
- *      url: // value for 'url'
- *      notes: // value for 'notes'
- *      category: // value for 'category'
- *      twitterHandle: // value for 'twitterHandle'
- *   },
- * });
- */
-export function useAddBookmarkMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    AddBookmarkMutation,
-    AddBookmarkMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<AddBookmarkMutation, AddBookmarkMutationVariables>(
-    AddBookmarkDocument,
-    options
-  )
-}
-export type AddBookmarkMutationHookResult = ReturnType<
-  typeof useAddBookmarkMutation
->
-export type AddBookmarkMutationResult =
-  Apollo.MutationResult<AddBookmarkMutation>
-export type AddBookmarkMutationOptions = Apollo.BaseMutationOptions<
-  AddBookmarkMutation,
-  AddBookmarkMutationVariables
->
-export const AddBookmarkReactionDocument = gql`
-  mutation addBookmarkReaction($id: ID!) {
-    addBookmarkReaction(id: $id) {
-      ...BookmarkInfo
-    }
-  }
-  ${BookmarkInfoFragmentDoc}
-`
-export type AddBookmarkReactionMutationFn = Apollo.MutationFunction<
-  AddBookmarkReactionMutation,
-  AddBookmarkReactionMutationVariables
->
-
-/**
- * __useAddBookmarkReactionMutation__
- *
- * To run a mutation, you first call `useAddBookmarkReactionMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useAddBookmarkReactionMutation` returns a tuple that includes:
- * - A mutate function that you can call at any time to execute the mutation
- * - An object with fields that represent the current status of the mutation's execution
- *
- * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
- *
- * @example
- * const [addBookmarkReactionMutation, { data, loading, error }] = useAddBookmarkReactionMutation({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useAddBookmarkReactionMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    AddBookmarkReactionMutation,
-    AddBookmarkReactionMutationVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useMutation<
-    AddBookmarkReactionMutation,
-    AddBookmarkReactionMutationVariables
-  >(AddBookmarkReactionDocument, options)
-}
-export type AddBookmarkReactionMutationHookResult = ReturnType<
-  typeof useAddBookmarkReactionMutation
->
-export type AddBookmarkReactionMutationResult =
-  Apollo.MutationResult<AddBookmarkReactionMutation>
-export type AddBookmarkReactionMutationOptions = Apollo.BaseMutationOptions<
-  AddBookmarkReactionMutation,
-  AddBookmarkReactionMutationVariables
->
-export const GetBookmarksDocument = gql`
-  query GetBookmarks($skip: Int, $category: String) {
-    bookmarks(skip: $skip, category: $category) {
-      ...BookmarkInfo
-    }
-  }
-  ${BookmarkInfoFragmentDoc}
-`
-
-/**
- * __useGetBookmarksQuery__
- *
- * To run a query within a React component, call `useGetBookmarksQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetBookmarksQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetBookmarksQuery({
- *   variables: {
- *      skip: // value for 'skip'
- *      category: // value for 'category'
- *   },
- * });
- */
-export function useGetBookmarksQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetBookmarksQuery,
-    GetBookmarksQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<GetBookmarksQuery, GetBookmarksQueryVariables>(
-    GetBookmarksDocument,
-    options
-  )
-}
-export function useGetBookmarksLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetBookmarksQuery,
-    GetBookmarksQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<GetBookmarksQuery, GetBookmarksQueryVariables>(
-    GetBookmarksDocument,
-    options
-  )
-}
-export type GetBookmarksQueryHookResult = ReturnType<
-  typeof useGetBookmarksQuery
->
-export type GetBookmarksLazyQueryHookResult = ReturnType<
-  typeof useGetBookmarksLazyQuery
->
-export type GetBookmarksQueryResult = Apollo.QueryResult<
-  GetBookmarksQuery,
-  GetBookmarksQueryVariables
->
 export const GetEpisodesDocument = gql`
   query GetEpisodes {
     episodes {
@@ -833,12 +412,8 @@ export const GetHomeDocument = gql`
     posts(first: 3) {
       ...PostInfo
     }
-    episodes {
-      ...EpisodeInfo
-    }
   }
   ${PostInfoFragmentDoc}
-  ${EpisodeInfoFragmentDoc}
 `
 
 /**

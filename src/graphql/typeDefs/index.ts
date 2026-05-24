@@ -32,22 +32,6 @@ export default gql`
     visibility: String
   }
 
-  type Bookmark {
-    id: ID!
-    url: String!
-    author: String
-    creator: String
-    description: String
-    image: String
-    site_name: String
-    title: String
-    host: String
-    reactions: Int
-    notes: String
-    category: String
-    twitterHandle: String
-  }
-
   type Episode {
     id: String
     description: String
@@ -82,7 +66,6 @@ export default gql`
   }
 
   type Query {
-    bookmarks(skip: Int, category: String): [Bookmark]!
     episodes: [Episode]!
     posts(first: Int): [Post]!
     post(slug: String!): Post
@@ -94,21 +77,6 @@ export default gql`
   type Mutation {
     login(password: String!): Boolean
     logout: Boolean
-    addBookmark(
-      url: String!
-      notes: String
-      category: String
-      twitterHandle: String
-    ): Bookmark
-    editBookmark(
-      id: ID!
-      title: String!
-      notes: String
-      category: String
-      twitterHandle: String
-    ): Bookmark
-    deleteBookmark(id: ID!): Boolean
-    addBookmarkReaction(id: ID!): Bookmark
     addAMAQuestion(question: String!): Boolean
     deleteAMAQuestion(id: ID!): Boolean
     editAMAQuestion(

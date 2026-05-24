@@ -33,18 +33,7 @@ const link = ApolloLink.from([createIsomorphLink()])
 
 export function createApolloClient(initialState = {}) {
   const ssrMode = typeof window === 'undefined'
-  const cache = new InMemoryCache({
-    typePolicies: {
-      Bookmark: {
-        keyFields: ['url'],
-        fields: {
-          url: {
-            merge: false,
-          },
-        },
-      },
-    },
-  }).restore(initialState)
+  const cache = new InMemoryCache().restore(initialState)
 
   return new ApolloClient({
     ssrMode,

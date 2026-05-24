@@ -31,49 +31,56 @@ function About() {
           <div className="space-y-12 ">
             <div className="leading-relaxed prose ">
               <p>
-                  Howdy, I&apos;m John. I&apos;m an online creator who tries to produce more than I consume. 
-                  You can get to know my voice through my sporadic {' '}
-                  <Link href="/writing" passHref>
-                    <a>blog posts</a>
-                  </Link>,{' '} 
-                  <a href="https://www.getrevue.co/profile/jman4190">monthly newsletter</a>,{' '}
-                  or following my breadcrumbs on{' '}
-                  <a href="https://twitter.com/learnwithjabe">Twitter</a>.
-                  I&apos;m currently working in product at {' '}
-                  <a href="https://www.houzz.com">
-                    Houzz
-                  </a>
-                  .
+                Howdy, I&apos;m John. I&apos;m an online creator who tries to
+                produce more than I consume. You can get to know my voice
+                through my sporadic{' '}
+                <Link href="/writing" passHref>
+                  <a>blog posts</a>
+                </Link>
+                ,{' '}
+                <a href="https://www.getrevue.co/profile/jman4190">
+                  monthly newsletter
+                </a>
+                , or following my breadcrumbs on{' '}
+                <a href="https://twitter.com/learnwithjabe">Twitter</a>.
+                I&apos;m currently working in product at{' '}
+                <a href="https://www.rula.com/">Rula</a>. Previous at Houzz.
               </p>
               <p>
-                In my free time I focus on {' '}
-                <a href="https://www.youtube.com/channel/UCOuzm2rfhw0ZXm-UyBVQ_8A">Learn With Jabe</a>,
-                a YouTube channel teaching beginners how to code. 
-                You'll find fun weekend projects focused on Python, SQL, GPT3, Web APIs, NBA Data, No Code Tools and more. 
-                I am a firm believer that the best way to learn is to teach.
+                In my free time I focus on{' '}
+                <a href="https://www.youtube.com/channel/UCOuzm2rfhw0ZXm-UyBVQ_8A">
+                  Learn With Jabe
+                </a>
+                , a YouTube channel teaching beginners how to code. You'll find
+                fun weekend projects focused on Python, SQL, GPT3, Web APIs, NBA
+                Data, No Code Tools and more. I am a firm believer that the best
+                way to learn is to teach.
               </p>
               <p>
-              I have a friends and family newsletter where I write about why I’m liking certain tweets on Twitter. 
-              It’s called{' '}
-                <a href="https://www.getrevue.co/profile/jman4190">Jabes Twitter Musings</a>
-                {' '}and if you’re interested to learn more you can get a taste here. 
+                I have a friends and family newsletter where I write about why
+                I’m liking certain tweets on Twitter. It’s called{' '}
+                <a href="https://www.getrevue.co/profile/jman4190">
+                  Jabes Twitter Musings
+                </a>{' '}
+                and if you’re interested to learn more you can get a taste here.
               </p>
               <p>
                 You can either follow me on{' '}
-                <a href="https://twitter.com/jman4190">Twitter</a> or better yet, my{' '}
-                <a href="https://twitter.com/learnwithjabe">bot</a> which retweets all of my likes. 
-                I’ve been learning to code over the years and you can check in on my progress on{' '}
-                <a href="https://github.com/jman4190">Github</a> where I share my repositories for others to build on.
+                <a href="https://twitter.com/jman4190">Twitter</a> or better
+                yet, my <a href="https://twitter.com/learnwithjabe">bot</a>{' '}
+                which retweets all of my likes. I’ve been learning to code over
+                the years and you can check in on my progress on{' '}
+                <a href="https://github.com/jman4190">Github</a> where I share
+                my repositories for others to build on.
               </p>
               <p>
-                Site template by <a href="https://twitter.com/brian_lovin">@brian_lovin</a>
+                Site template by{' '}
+                <a href="https://twitter.com/brian_lovin">@brian_lovin</a>
               </p>
             </div>
           </div>
 
           <WritingSubscribeBox />
-
-          
         </div>
       </CenteredColumn>
     </Page>

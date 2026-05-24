@@ -33,45 +33,6 @@ const routes = {
       url: 'writing',
     }),
   },
-  bookmarks: {
-    label: 'Bookmarks',
-    path: '/bookmarks',
-    seo: extendSEO({
-      title: 'Bookmarks',
-      description: 'Internet masterpieces that I am constantly referencing',
-      image: 'meta/bookmarks.png',
-      url: 'bookmarks',
-    }),
-  },
-  appDissection: {
-    label: 'App Dissection',
-    path: '/app-dissection',
-    seo: extendSEO({
-      title: 'App Dissection',
-      description: 'In-depth design explorations.',
-      image: 'meta/app-dissection.png',
-      url: 'app-dissection',
-    }),
-  },
-  login: {
-    label: 'Login',
-    path: '/login',
-    seo: extendSEO({
-      title: 'Login',
-      description: 'What do you think you’re doing?',
-      url: 'login',
-    }),
-  },
-  stack: {
-    label: 'Stack',
-    path: '/stack',
-    seo: extendSEO({
-      title: 'Stack',
-      description: 'My favorite tools and software.',
-      image: 'meta/stack.png',
-      url: 'stack',
-    }),
-  },
 }
 
 export default routes

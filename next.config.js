@@ -6,17 +6,57 @@ module.exports = {
     return [
       {
         source: '/uses',
-        destination: '/stack',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/stack',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/security',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/bookmarks',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/bookmarks/:category',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/app-dissection',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/app-dissection/:slug',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/login',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/logout',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/design-details',
-        destination: '/app-dissection',
+        destination: '/projects',
         permanent: true,
       },
       {
         source: '/design-details/:slug',
-        destination: '/app-dissection/:slug',
+        destination: '/projects',
         permanent: true,
       },
       {

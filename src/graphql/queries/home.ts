@@ -1,4 +1,4 @@
-import { PostInfoFragment, EpisodeInfoFragment } from '../fragments'
+import { PostInfoFragment } from '../fragments'
 import { gql } from '@apollo/client'
 
 export const GET_HOME = gql`
@@ -6,10 +6,6 @@ export const GET_HOME = gql`
     posts(first: 3) {
       ...PostInfo
     }
-    episodes {
-      ...EpisodeInfo
-    }
   }
   ${PostInfoFragment}
-  ${EpisodeInfoFragment}
 `

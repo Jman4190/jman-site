@@ -16,6 +16,16 @@ const scoreBook = {
   title: 'The Score Takes Care of Itself',
 }
 
+const addedBooks = [
+  'building-microservices-designing-fine-grained-systems',
+  'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas',
+  'the-paradox-of-choice-why-more-is-less',
+  'the-signal-and-the-noise',
+  'what-customers-want',
+  'wooden-on-leadership-how-to-create-a-winning-organization',
+  'zero-to-one-notes-on-startups-or-how-to-build-the-future',
+]
+
 describe('Bookshelf', () => {
   before(() => {
     cy.visit('/bookshelf')
@@ -35,6 +45,12 @@ describe('Bookshelf', () => {
     cy.get(`[data-book-slug="${mergedBook.duplicateSlug}"]`).should('not.exist')
     cy.get('[data-book-slug="the-tao-of-physics"]').should('have.length', 1)
     cy.get('[data-book-slug="tao-of-physics"]').should('not.exist')
+  })
+
+  it('should include books added from the quote CSV', () => {
+    addedBooks.forEach((slug) => {
+      cy.get(`[data-book-slug="${slug}"]`).should('have.length', 1)
+    })
   })
 
   it('should use 3 books per row on phone widths', () => {

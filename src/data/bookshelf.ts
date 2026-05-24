@@ -70,6 +70,10 @@ const bookSources: BookSource[] = [
     title: 'Boomerang: Travels in the New Third World',
     author: 'Michael Lewis',
   },
+  {
+    title: 'Building Microservices: Designing Fine-Grained Systems',
+    author: 'Sam Newman',
+  },
   { title: 'Caesar: Life of a Colossus', author: 'Adrian Goldsworthy' },
   {
     title:
@@ -144,6 +148,11 @@ const bookSources: BookSource[] = [
   },
   { title: 'Seneca', author: 'Lucius Annaeus Seneca' },
   { title: 'Shoe Dog', author: 'Phil Knight' },
+  {
+    title:
+      'Shortcut: How Analogies Reveal Connections, Spark Innovation, and Sell Our Greatest Ideas',
+    author: 'John Pollack',
+  },
   { title: 'Snow Crash', author: 'Neal Stephenson' },
   {
     title: 'The Structure of Scientific Revolutions',
@@ -164,7 +173,12 @@ const bookSources: BookSource[] = [
     title: 'The Master Switch: The Rise and Fall of Information Empires',
     author: 'Tim Wu',
   },
+  {
+    title: 'The Paradox of Choice: Why More Is Less',
+    author: 'Barry Schwartz',
+  },
   { title: 'The Score Takes Care of Itself', author: 'Bill Walsh' },
+  { title: 'The Signal and the Noise', author: 'Nate Silver' },
   {
     title: 'The Sovereign Individual',
     author: 'James Dale Davidson and William Rees-Mogg',
@@ -182,6 +196,15 @@ const bookSources: BookSource[] = [
   { title: 'Unbroken', author: 'Laura Hillenbrand' },
   { title: 'Walt Disney', author: 'Neal Gabler' },
   { title: 'We Are All Weird', author: 'Seth Godin' },
+  { title: 'What Customers Want', author: 'Anthony W. Ulwick' },
+  {
+    title: 'Wooden on Leadership: How to Create a Winning Organization',
+    author: 'John Wooden and Steve Jamison',
+  },
+  {
+    title: 'Zero to One: Notes on Startups, or How to Build the Future',
+    author: 'Peter Thiel and Blake Masters',
+  },
 ]
 
 function buildBookshelfBooks(): BookshelfBook[] {

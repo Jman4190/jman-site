@@ -186,6 +186,68 @@ export const bookshelfQuotesByTitle: Record<string, BookshelfQuote[]> = {
       takeaway: 'Inflation for education is rising at an unheard of pace',
     },
   ],
+  'Building Microservices: Designing Fine-Grained Systems': [
+    {
+      id: 'building-microservices-designing-fine-grained-systems-1',
+      text: '“As Ben Christensen from Netflix puts it, when we think about the bigger picture, “it needs to be a cohesive system made of many small parts with autonomous lifecycles but all coming together.” So we need to find the balance between optimizing for autonomy of the individual microservice without losing sight of the bigger picture. Defining clear attributes that each service should have is one way of being clear as to where that balance sits.”',
+      takeaway:
+        'The end service is a sum of its parts, but you still need to make each individual part great for the entire thing to be great',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-2',
+      text: '“We want related behavior to sit together, and unrelated behavior to sit elsewhere. Why? Well, if we want to change behavior, we want to be able to change it in one place, and release that change as soon as possible. If we have to change that behavior in lots of different places, we’ll have to release lots of different services (perhaps at the same time) to deliver that change.”',
+      takeaway: 'Abstraction is key to coding',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-3',
+      text: '“Make sure you know what you’re getting: keep your middleware dumb, and keep the smarts in the endpoints.”',
+      takeaway: 'Middleware is a commodity. Focus on value at the endpoints',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-4',
+      text: '“Build if it is unique to what you do, and can be considered a strategic asset; buy if your use of the tool isn’t that special.”',
+      takeaway: 'Wardley mapping. Don’t build custom commodities...',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-5',
+      text: '“The answer here is pretty straightforward: monitor the small things, and use aggregation to see the bigger picture.”',
+      takeaway: 'Focus on the inputs and the rest will take care of itself',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-6',
+      text: '“This led famously to its two-pizza teams, where no team should be so big that it could not be fed with two pizzas. This driver for small teams owning the whole lifecycle of their services is a major reason why Amazon developed Amazon Web Services. It needed to create the tooling to allow its teams to be self-sufficient.”',
+      takeaway: 'Smaller teams can outduel bigger ones',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-7',
+      text: '“As we’ve discussed before, we aim to ensure our services are decomposed such that the pace of change inside a service is much higher than the pace of change between services.”',
+      takeaway:
+        'Things broken into small pieces can be optimized and modified much easier and quicker than a big thing',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-8',
+      text: '“But let’s again consider what microservices are: services modeled after a business domain, not a technical one. And if our team that owns any given service is similarly aligned along the business domain, it is much more likely that the team will be able to retain a customer focus, and see more of the feature development through, because it has a holistic understanding and ownership of all the technology associated with a service.”',
+      takeaway:
+        'Be audience focused instead of technically / functionally focused',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-9',
+      text: '“By decomposing our systems into finer-grained microservices, we’re hoping to expose lots of seams in the form of APIs that people can use to do many, hopefully wonderful, things. If you get your discovery right, we know where things are. But how do we know what those things do, or how to use them? One option is obviously to have documentation about the APIs.”',
+      takeaway:
+        'Microservices are like APIs and allow lots of small teams to connect',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-10',
+      text: '“Experience has shown us that interfaces structured around business-bounded contexts are more stable than those structured around technical concepts. By modeling the domain in which our system operates, not only do we attempt to form more stable interfaces, but we also ensure that we are better able to reflect changes in business processes easily. Use bounded contexts to define potential domain boundaries.”',
+      takeaway:
+        'Organize around a business objective, not a technical/functional objective',
+    },
+    {
+      id: 'building-microservices-designing-fine-grained-systems-11',
+      text: '“Learn to embrace the concept of evolutionary architecture, where your system bends and flexes and changes over time as you learn new things. Think not of big-bang rewrites, but instead of a series of changes made to your system over time to keep it supple.”',
+      takeaway: 'Focus on the little things, they add up!',
+    },
+  ],
   'Caesar: Life of a Colossus': [
     {
       id: 'caesar-life-of-a-colossus-1',
@@ -2176,6 +2238,105 @@ export const bookshelfQuotesByTitle: Record<string, BookshelfQuote[]> = {
       takeaway: 'Follow your heart’s map and believe',
     },
   ],
+  'Shortcut: How Analogies Reveal Connections, Spark Innovation, and Sell Our Greatest Ideas':
+    [
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-1',
+        text: '“The word analogy traces its linguistic roots to the Greek analogia, a mathematical term meaning proportion, or equality of ratios.”',
+        takeaway: 'An analogy is simply a model',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-2',
+        text: '“In short, when presented with the words flying pig, the actual image we construct in our mind’s eye depends on an infinitely rich array of inputs and experiences that vary from person to person.”',
+        takeaway:
+          'Your experiences influence how you form and perceive analogies',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-3',
+        text: '“First, one can only describe or explain something new in an effective way by using concepts with which an audience is already somewhat familiar.”',
+        takeaway:
+          'You can only explain new things with things people already know of. Usually you just do it in a new way',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-4',
+        text: '“Use the familiar to explain something less familiar. Highlight similarities and obscure differences. Identify useful abstractions Tell a coherent story. Resonate emotionally.”',
+        takeaway:
+          '“Use the familiar to explain something less familiar. Highlight similarities and obscure differences. Identify useful abstractions Tell a coherent story. Resonate emotionally.”',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-5',
+        text: '“Rather, breakthroughs are the rambunctious progeny of many other ideas, jostling one another in a crowded intellectual environment, where greater diversity, accumulating insights, and chance encounters expand the range of possible combinations. And it is only by making analogies that we connect ideas from one realm to another in a way that is relevant or useful, revealing the adjacent possible.”',
+        takeaway:
+          'Analogies are connecting the dots to form new ways of thinking and perspectives',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-6',
+        text: '“Be persistent. In working out an invention, the most important quality is persistence,” Edison said. “Nearly every man who develops a new idea works it up to a point where it looks impossible, and then he gets discouraged. That’s not the place to get discouraged, that’s the place to get interested.”',
+        takeaway: 'Persistency and grit are common amongst innovators',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-7',
+        text: '“Put another way, we can only conceive, understand, or explain something new in terms of what we already know.”',
+        takeaway: 'Everything is a remix',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-8',
+        text: '“In an extreme view, the world can be seen only as connections, nothing else,’ Berners-Lee wrote, adding that, “a piece of information is really defined only by what it’s related to, and how it’s related.” For example, while dictionaries define the meaning of words, each definition is itself composed of still more words. As such, every word’s definition depends on other, related definitions for its meaning. “Tree structures is everything,” he wrote.”',
+        takeaway:
+          'Everything is a remix. Connecting the dots in new ways is the only way to form something new. All ideas come from existing ideas.',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-9',
+        text: '“Conceptually, the human brain functions in a similar way. “There are billions of neurons in our brains, but what are neurons? Just cells,” Berners-Lee wrote. “The brain has no knowledge until connections are made between neurons. ALl that we know, all that we are, comes from the way our neurons are connected.”',
+        takeaway:
+          'The world wide web is structured like neurons in our brain. Neurons are worthless unless they are connected. Just like information is worthless unless it is connected.',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-10',
+        text: '“The web is also accelerating the pace of innovation, as it offers people hyperlinked shortcuts to related information and others interested in those same ideas.”',
+        takeaway:
+          'Innovations are happening at an unbelievable pace now because of the access to information the internet has provided',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-11',
+        text: '“Innovators are those who spot useful analogies before others do and figure out how to put them to work.”',
+        takeaway:
+          'Innovators are people who make connections and spot analogies before other people follow suit',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-12',
+        text: '“Emotions, once triggered, are like a genie released from a bottle - hard to recapture and cork.”',
+        takeaway: 'You can’t take back emotions once they are felt',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-13',
+        text: '“The condor won. The condor took the least amount of energy to get from here to there,” Jobs told the audience. “And man didn’t do so well; he came in with a rather unimpressive showing about a third of the way down the list. But fortunately, someone at Scientific American was insightful enough to test man with a bicycle. And man with a bicycle won - twice as good as the condor. All the way off the list. And what it showed was that man as a toolmaker has the ability to make a tool to amplify an inherent ability he has. And that’s exactly what we are doing here at Apple. It’s exactly what we are doing here.”',
+        takeaway:
+          'The Mac was a bicycle for the brain. Man with tools can amplify what he does. Man PAIRED with machine is bigger, stronger, faster',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-14',
+        text: '“As Jobs described it, Apple was building a “bicycle for the mind” - a tool that could take people’s minds anywhere they could possibly imagine and multiply its power.”',
+        takeaway: 'Tools multiply powers',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-15',
+        text: '“Again, you can’t connect the dots looking forward; you can only connect them looking backwards,” Jobs reiterated. “So you have to trust that the dots will somehow connect in your future. You have to trust in something- your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.”',
+        takeaway: 'Connecting the dots is making analogies',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-16',
+        text: '“The urge to model is nothing new. Albert Einstein once noted that poets, painters, philosophers, and theoretical physicists all pursue a similar human impulse: to express what they see in nature and create “a simple and synoptic image of the surrounding world…”',
+        takeaway:
+          'Models and analogies are very similar and frequent in the arts and sciences. As humans, we seek patterns, and ways to describe these patterns simply to others',
+      },
+      {
+        id: 'shortcut-how-analogies-reveal-connections-spark-innovation-and-sell-our-greatest-ideas-17',
+        text: '“Because models are analogies, and analogies are models; some are expressed as mathematical equations, some are visual in nature, such as maps and diagrams, and some take verbal form.”',
+        takeaway:
+          'Analogies can come in any form, just like models come in various forms',
+      },
+    ],
   'Snow Crash': [
     {
       id: 'snow-crash-1',
@@ -2942,6 +3103,48 @@ export const bookshelfQuotesByTitle: Record<string, BookshelfQuote[]> = {
         'We cannot live without bandwidth, we may ruin the planet in the process',
     },
   ],
+  'The Paradox of Choice: Why More Is Less': [
+    {
+      id: 'the-paradox-of-choice-why-more-is-less-1',
+      text: '“A large array of options may discourage consumers because it forces an increase in the effort that goes into making a decision. So consumers decide not to decide, and don’t buy the product. Or if they do, the effort that the decision requires detracts from the enjoyment derived from the results. Also, a large array of options may diminish the attractiveness of what people actually choose, the reason being that thinking about the attractions of some of the unchosen options detracts from the pleasure derived from the chosen one.”',
+      takeaway:
+        'The more choices you give the more effort that is needed to wade through them',
+    },
+    {
+      id: 'the-paradox-of-choice-why-more-is-less-2',
+      text: '“Whenever you eat a meal in a restaurant, or listen to a piece of music, or go to a movie, you either like the experience or you don’t. The way that the meal or the music or the movie makes you feel in the moment—either good or bad—could be called experienced utility.”',
+      takeaway:
+        'Experienced utility is bifurcated. Either you like it or you don’t like it',
+    },
+    {
+      id: 'the-paradox-of-choice-why-more-is-less-3',
+      text: '“Nobel Prize–winning psychologist Daniel Kahneman and his colleagues have shown that what we remember about the pleasurable quality of our past experiences is almost entirely determined by two things: how the experiences felt when they were at their peak (best or worst), and how they felt when they ended. This “peak-end” rule of Kahneman’s is what we use to summarize the experience, and then we rely on that summary later to remind ourselves of how the experience felt.”',
+      takeaway: 'Peak and end feelings are what we remember most',
+    },
+    {
+      id: 'the-paradox-of-choice-why-more-is-less-4',
+      text: '“The fact is, we all hate to lose, which Kahneman and Tversky refer to as loss aversion.”',
+      takeaway: 'Loss aversion is Kahneman & Tversky breakthrough insight',
+    },
+    {
+      id: 'the-paradox-of-choice-why-more-is-less-5',
+      text: '“The lesson is that we should try to do more downward counterfactual thinking. While upward counterfactual thinking may inspire us to do better the next time, downward counterfactual thinking may induce us to be grateful for how well we did this time.”',
+      takeaway:
+        'Managing expectations can be more effective than setting higher goals. Decreasing the denominator works like increasing the numerator',
+    },
+    {
+      id: 'the-paradox-of-choice-why-more-is-less-6',
+      text: '“It is called prospect theory, and it was developed by Daniel Kahneman and Amos Tversky. What the theory claims is that evaluations are relative to a baseline. A given experience will feel positive if it’s an improvement on what came before and negative if it’s worse than what came before. To understand how we will judge an experience, it is necessary first to find out where we set our hedonic zero point.”',
+      takeaway:
+        'Everything is relative. Prospect Theory means we care more about loss',
+    },
+    {
+      id: 'the-paradox-of-choice-why-more-is-less-7',
+      text: '“The lesson here is that high expectations can be counterproductive. We probably can do more to affect the quality of our lives by controlling our expectations than we can by doing virtually anything else. The blessing of modest expectations is that they leave room for many experiences to be a pleasant surprise, a hedonic plus. The challenge is to find a way to keep expectations modest, even as actual experiences keep getting better.”',
+      takeaway:
+        'This is definition of stoicism. Manage expectations. Stay level headed',
+    },
+  ],
   'The Score Takes Care of Itself': [
     {
       id: 'the-score-takes-care-of-itself-1',
@@ -3109,6 +3312,115 @@ export const bookshelfQuotesByTitle: Record<string, BookshelfQuote[]> = {
       id: 'the-score-takes-care-of-itself-29',
       text: '“The “big plays” in business-or professional football-don’t just suddenly occur out of thin ar. They result from very hard work and painstaking attention over the years to all of the details related to your leadership.”',
       takeaway: 'The little things add up, especially regarding leadership',
+    },
+  ],
+  'The Signal and the Noise': [
+    {
+      id: 'the-signal-and-the-noise-1',
+      text: '“Our biological instincts are not always very well adapted to the information-rich modern world. Unless we work actively to become aware of the biases we introduce, the returns to additional information may be minimal - or diminishing.”',
+      takeaway:
+        'You need to actively seek your blind spots if you want to not have confirmation bias with data and information',
+    },
+    {
+      id: 'the-signal-and-the-noise-2',
+      text: '“Sports and games, because they follow well-defined rules, represent good laboratories for testing our predictive skills. They help us to a better understanding of randomness and uncertainty and provide insight about how we might forge information into knowledge.”',
+      takeaway:
+        'Because sports and games have rules (constant for the most part), it is easier to test hypothesis and find signals amidst the noise. Sports and games are a good place to test predictions',
+    },
+    {
+      id: 'the-signal-and-the-noise-3',
+      text: '“Leverage, or investments financed by debt.”',
+      takeaway:
+        'Leverage is investment financed by debt. When you leverage an influencer, you go into debt but invest in their ability to get results',
+    },
+    {
+      id: 'the-signal-and-the-noise-4',
+      text: '“The word objective is sometimes taken to be synonymous with quantitative, but it isn’t. Instead it means seeing beyond our personal biases and prejudices and toward the truth of a problem.”',
+      takeaway: 'Being objective is being aware of your biases and prejudices.',
+    },
+    {
+      id: 'the-signal-and-the-noise-5',
+      text: '“Good innovators typically think very big and they think very small.”',
+      takeaway:
+        'Innovators have the long term vision of scaling but start out by dominating a niche market',
+    },
+    {
+      id: 'the-signal-and-the-noise-6',
+      text: '“And yet while the notion that aggregate forecasts beat individual ones is an important empirical regularity, it is sometimes used as a cop-out when forecasts might be improved. The aggregate forecast is made up of individual forecasts; if those improve, so will the group’s performance. Moreover, even the aggregate economics forecasts have been quite poor in any real-world sense, so there is plenty of room for progress.”',
+      takeaway:
+        'The combined efforts together are a better predictor than the individual. But don’t lose sight that you can improve things on an individual scale to increase the overall groups performance',
+    },
+    {
+      id: 'the-signal-and-the-noise-7',
+      text: '“The key is in remembering that a model is a tool to help us understand the complexities of the universe, and never a substitute for the universe itself.”',
+      takeaway:
+        'a model is just a tool to help us explain the universe. It is never the undeniable truth, only our best effort at the truth',
+    },
+    {
+      id: 'the-signal-and-the-noise-8',
+      text: '“The bayesian viewpoint, instead, regards rationality as a probabilistic matter. In essence, Bayes and Price are telling Hume, don’t blame nature because you are too daft to understand it: if you step out of your skeptical shell and make some predictions about its behavior, perhaps you will get a little closer to the truth.”',
+      takeaway:
+        'Predicting is just an attempt to get closer to the truth. It is us who don’t understand nature, but predicting is our best bet at learning the truth',
+    },
+    {
+      id: 'the-signal-and-the-noise-9',
+      text: '“This does not imply that all prior beliefs are equally correct or equally valid. But I’m of the view that we can never achieve perfect objectivity, rationality, or accuracy in our beliefs. Instead, we can strive to be less subjective, less irrational, and less wrong. Making predictions based on our beliefs is the best (and perhaps even the only) way to test ourselves.”',
+      takeaway:
+        'We all have biases formed from our own experiences. Applying the Bayesian theory is trying to become aware of these biases and making predictions after acknowledging them',
+    },
+    {
+      id: 'the-signal-and-the-noise-10',
+      text: '“Elite chess players tend to be good at metacognition - thinking about the way they think - and correcting themselves if they don’t seem to be striking the right balance.”',
+      takeaway:
+        'Thinking objectively is thinking about the way you think. Become aware of your biases and then use that to make better predictions.',
+    },
+    {
+      id: 'the-signal-and-the-noise-11',
+      text: '“Blitzing your opponent with a deluge of possibilities is the best way to complicate his probability calculations.”',
+      takeaway:
+        'Referring to poker but could be used in many other scenarios (football for instance)',
+    },
+    {
+      id: 'the-signal-and-the-noise-12',
+      text: '“But if you’re approaching prediction as more of a business proposition, you’re usually better off finding someplace where you can be the big fish in a small pond.”',
+      takeaway:
+        'Big fish in a small pond is better than a small fish in a big pond. Similar to Thiels monopoly theory',
+    },
+    {
+      id: 'the-signal-and-the-noise-13',
+      text: '“Control. When we play poker, we control our decision making process but not how the cards come down. If you correctly detect an opponent’s bluff, but he gets a lucky card and wins the hand anyway, you should be pleased rather than angry, because you played the hand as well as you could. The irony is that by being less focused on your results, you may achieve better ones.”',
+      takeaway:
+        'Focus on the process rather than the results. Similar to HTSAS in that the actual idea for a start up will hit you when you least expect it if you are viewing the world from a start up mentality and process',
+    },
+    {
+      id: 'the-signal-and-the-noise-14',
+      text: '“The more eagerly we commit to scrutinizing and testing our theories, the more readily we accept that our knowledge of the world is uncertain, the more willingly we acknowledge that perfect prediction is impossible, the less we will live in fear of our failures, and the more liberty we will have to let our minds flow freely. By knowing more about what we don’t know, we may get a few more predictions right.”',
+      takeaway:
+        'Identifying your blind spots (that are infinite) will help you get more predictions right by knowing more of the unknown',
+    },
+    {
+      id: 'the-signal-and-the-noise-15',
+      text: '“In many walks of life, expressions of uncertainty are mistake for admissions of weakness.”',
+      takeaway:
+        'The opposite is true, Knowing what you don’t know is an advantage and can help with probabilistic predictions',
+    },
+    {
+      id: 'the-signal-and-the-noise-16',
+      text: '“Bayes’s theorem requires us to state - explicitly - how likely we believe an event is to occur before we begin to weigh the evidence. It calls this estimate a prior belief.”',
+      takeaway:
+        'Bayes theory is explicitly confronting your biases and factoring them in (stating them) before making a prediction',
+    },
+    {
+      id: 'the-signal-and-the-noise-17',
+      text: '“Information becomes knowledge only when it’s placed in context. Without it, we have no way to differentiate the signal from the noise, and our search for the truth might be swamped by false positives.”',
+      takeaway:
+        'Data is not an insight. You need to add context to everything to understand it better',
+    },
+    {
+      id: 'the-signal-and-the-noise-18',
+      text: '“In the real world, they rarely come when you are standing in place. Nor do the “big” ideas necessarily start out that way. It’s more often with small, incremental, and sometimes even accidental steps that we make progress.”',
+      takeaway:
+        'Continue to make predictions and refine your model and that will ultimately lead you to the truth, or the closest you can possibly come.',
     },
   ],
   'The Sovereign Individual': [
@@ -3820,6 +4132,351 @@ export const bookshelfQuotesByTitle: Record<string, BookshelfQuote[]> = {
       text: '“The challenge of your future is to do productive and useful work for and by and with the tribe that cares about you. To find and assemble the tribe, to earn their trust, to take them where they want and need to go.”',
       takeaway:
         'Brands can lead tribes if they identify them correctly. Create it if people have not already formed if. If it is formed then join it.',
+    },
+  ],
+  'What Customers Want': [
+    {
+      id: 'what-customers-want-1',
+      text: '“In the outcome-driven paradigm the focus is not on the customer, it is on the job: the job is the unit of analysis. When companies focus on helping the customer get a job done faster, more conveniently, and less expensively than before, they are more likely to create products and services that the customer wants. Only after a company chooses to focus on the job, not the customer, are they capable of reliably creating customer value.”',
+      takeaway:
+        'You can actually provide a better experience for the customer by focusing on the job they are trying to get done',
+    },
+    {
+      id: 'what-customers-want-2',
+      text: '“When captured correctly, desired outcomes tend to remain stable over time, differentiating them from other types of stated customer requirements. People who were cleaning their teeth back in the 1950s, for example, wanted to minimize the time it took to remove food from hard-to-reach places and minimize the likelihood of gum irritation—just as they do today and will in the future.”',
+      takeaway:
+        'Desired outcomes should remain stable which is why you can build products and design businesses around them',
+    },
+    {
+      id: 'what-customers-want-3',
+      text: '“Before opportunities can be addressed, they must be discovered, and before they are discovered, they must be defined. In the outcome-driven paradigm, an opportunity is defined as an outcome, job, or constraint that is important and unsatisfied given the products and services that are available today.”',
+      takeaway:
+        'It is much easier to discover something when you know what you are looking for',
+    },
+    {
+      id: 'what-customers-want-4',
+      text: '“Using the opportunity score as the segmentation variable forces the creation of segments that represent unique opportunities. From a development and marketing perspective this is nirvana, as this market insight is just what is needed to make effective targeting, positioning, messaging, and other product and marketing decisions.”',
+      takeaway:
+        'By clustering people by needs you have a target market, not only that but you know exactly what to build for them and how to message it',
+    },
+  ],
+  'Wooden on Leadership: How to Create a Winning Organization': [
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-1',
+      text: '“Don’t worry about whether you’re better than somebody else, but never cease trying to be the best you can become. You have control over that; the other you don’t.”',
+      takeaway: 'You can only control your actions. Never stop improving',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-2',
+      text: '“The score will take care of itself when you take care of the effort that precedes the score.”',
+      takeaway:
+        'Focusing on the process and effort will eventually lead to good things (similar to Billy Walsh!)',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-3',
+      text: '“I believe there is no more powerful leadership than your own personal example.”',
+      takeaway: 'Actions speak louder than words.',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-4',
+      text: '“This occurs when Cooperation is present, when you are more concerned with “What’s right” than “Who’s right.”',
+      takeaway: 'Focus on the idea not the source of the idea',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-5',
+      text: '“Alertness, the ability to be constantly observing, absorbing, and learning from what’s going on around you, is a critical component for the individual in charge, the leader who strives for continuous improvement. You must be constantly awake, alive, and alert in evaluating yourself as well as the strengths and weaknesses of your organization and your competitors.”',
+      takeaway:
+        'Being alert is like turning pro. Good leaders are alert because they are always eager to learn more',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-6',
+      text: '“Do not be afraid of mistakes, even of failure. Use good judgement based on all available information and then use Initiative. The leader who has fear of failure, who is afraid to act, seldom will face success.”',
+      takeaway:
+        'Getting shit done is having initiative. You can’t fear failure or you will miss out on successes as well',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-7',
+      text: '“Practice moderation and balance in all that you do.”',
+      takeaway: 'Moderation in everything',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-8',
+      text: '“The best leaders understand that to successfully compete at any level requires continuous learning and improvement.”',
+      takeaway: 'The best leaders are always learning',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-9',
+      text: '“The best leaders are lifelong learners; they take measures to create organizations that foster and inspire learning throughout. The most effective leaders are those who realize it’s what you learn after you know it all that counts most.”',
+      takeaway:
+        'The best leaders are not only lifelong learners but they create a learning atmosphere for everyone',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-10',
+      text: '“There is perhaps no stronger steel than well-founded self-belief: the knowledge that your preparation is complete, that you have done all things possible to ready yourself and your organization for the competition, whatever form it comes in.”',
+      takeaway: 'Strong belief typically stems from strong preparation',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-11',
+      text: '“Success is peace of mind which is a direct result of self-satisfaction in knowing you made the effort to do the best of which you are capable.”',
+      takeaway:
+        'Success is when you have giving everything you can into what you can control',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-12',
+      text: '“I believe effective leaders are, first and foremost, good teachers.”',
+      takeaway: 'Great leaders are great teachers',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-13',
+      text: '“I was asked, “Coach Wooden, how can I learn about human nature?” I replied, “Get old.” Of course, I was referring to the value of experience, the knowledge gained from doing something for years. There’s a quicker way to gain the information experience provides, namely, ask somebody who already has it.”',
+      takeaway:
+        'Knowledge and experience take time, the only shortcut is to read and ask people who have already gone through it',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-14',
+      text: '“Explain to each team member precisely how his or her contributions connect to the welfare and success of the entire organization.”',
+      takeaway:
+        'Leaders should explain to each member of the organization why and how their role is important, both for their own knowledge and so others can be aware and understand the sum of all the parts',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-15',
+      text: '“He believed that winning is a result of process, and he was a master of the process, of getting us to focus on what we were doing rather than the final score.”',
+      takeaway: 'Focus on the process and the score will take care of itself!',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-16',
+      text: '“Those under your leadership must be taught that little things make the big things happen. In fact, they must first learn there are no big things, only a logical accumulation of little things done at a very high standard of performance.”',
+      takeaway:
+        'There are no big things, just a sum of lots of little things done right. Everyone focuses on overnight successes but forget about the thousands of days before and the things they did to get them in that situation',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-17',
+      text: '“An individual grounded in fundamentals has, I believe, a much higher likelihood of success when sudden change is forced upon him.”',
+      takeaway:
+        'Learning first principles or the basics provides something to fall back on in new situations',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-18',
+      text: '“Only when you fully comprehend the magnitude of the potential that exists in every individual minute will you begin to treat time with the grave respect it deserves. Over the decades I’ve observed that most effective leaders do not disrespect time, not a minute. They understand that when it comes to success - real achievement - time is of the essence. And the essence of success is time.”',
+      takeaway:
+        'Value every minute. Live in the moment and learn from everything you do. Success takes time',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-19',
+      text: '“You “expand” time with proper organization and execution - an hour becomes longer than 60 minutes. A well-organized leader can get more done in two hours than a poorly organized coach gets done in two days.”',
+      takeaway:
+        'Organization is key if you want to take advantage of time. Proper organization precedes proper execution',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-20',
+      text: '“When leaders instill the genuine belief that the opportunity for making great things happen is possible in every job, they have achieved something extraordinary. They have created an organization that fosters and breeds achievers, a superior team filled with the people striving to reach 100 percent of their potential in ways that serve the team. It becomes a force with exponential power and productivity.”',
+      takeaway:
+        'When everyone knows their role and how it helps the team, and truly believes and then executes their role, your team has a magical force that is often times unstoppable',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-21',
+      text: '“When all members of your organization strive for personal greatness - and derive pride from what they contribute to the group - you will unleash powerful forces that will make your unit more effective and, ultimately, more competitive.”',
+      takeaway:
+        'When each player individually brings their best, the team gets stronger as a whole (similar to Nate Silver where the sum of all predictions was stronger than individual predictions)',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-22',
+      text: '“Let the ambitious individuals know that before advancing they must first perform their assigned roles with great skill. Before calculus comes geometry; before geometry comes addition and subtraction. Each must be mastered in its turn before the individual advances to the next level. Before a player on our team could move to an expanded role, he must have demonstrated complete mastery of the role he had been given.”',
+      takeaway:
+        'Moving up is still like a ladder, you must master each step before moving to the next',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-23',
+      text: '“He did not want “yes men” around him. We were encouraged to argue our points, knowing he’d come back at us strong with his own opinions. That was his way of testing how much we believed in what we were telling him and how much we knew about it.”',
+      takeaway:
+        'You don’t just want yes men, you want people who will challenge you, but certainly challenge them back to make sure they truly believe in what they are arguing',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-24',
+      text: '“Respect all; fear none; concentrate on improving and executing our own system to the highest level possible. That was always my approach.”',
+      takeaway:
+        'Above all, focus on your own system and maximizing it to it’s highest potential',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-25',
+      text: '“A good leader never stops learning. A great leader never stops teaching.”',
+      takeaway: 'Great leaders are great teachers.',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-26',
+      text: '“My preferred method of instruction was the whole-part system, which broke the “whole,” that is, playing basketball, down into small pieces that could be worked on selectively and perfected. Those pieces included how to execute a shot correctly, eye movement, hand placement, passing, pivoting, catching, running routes on plays, the specifics of rebounding, defensive systems and more.”',
+      takeaway:
+        'Very similar to programming as well as Brian Balfours growth philosophy, focus on the inputs and break those down as granular as you can then improve each individual input and before you know it, the score will take care of itself',
+    },
+    {
+      id: 'wooden-on-leadership-how-to-create-a-winning-organization-27',
+      text: '“And that, in my opinion, is the first goal of leadership - namely, getting the very best out of the people in your organization, whether they have talent to spare or are spare on talent.”',
+      takeaway: 'Great leaders bring out the best in people',
+    },
+  ],
+  'Zero to One: Notes on Startups, or How to Build the Future': [
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-1',
+      text: '“If you take one typewriter and build 100, you have made horizontal progress. If you have a typewriter and build a word processor, you have made vertical progress.”',
+      takeaway:
+        'Horizontal goes from 1 to N while vertical goes from 0 to 1. Horizontal = globalization while vertical = technology I interpreted this more as, horizontal = building by analogy. So someone sees Snapchat and builds a “disapearing texting app”. Or Vine tries to build “instagram for video” and then Vertical is when you define a new category. Musk often talks about trying to build vertically using “first principle theory”',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-2',
+      text: '“New technology tends to come from new ventures - startups. From the Founding Fathers in politics to the Royal Society in science to Fairchild Semiconductor’s “traitorous eight” in business, small groups of people bound together by a sense of mission have changed the world for the better. The easiest explanation for this is negative: it’s hard to develop new things in big organizations, and it’s even harder to do it by yourself.”',
+      takeaway:
+        'A startup is just a collection of people on the same mission. It is easier to create a startup with others than solo, but not too many others',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-3',
+      text: '“Business version of our contrarian question is: what valuable company is nobody building?”',
+      takeaway:
+        'Don’t seek out competition, find a market that nobody is dominating and monopolize it',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-4',
+      text: '“But a great business is defined by its ability to generate cash flows in the future. Investors expect Twitter will be able to capture monopoly profits over the next decade, while newspapers’ monopoly days are over.”',
+      takeaway:
+        'Don’t always focus on short term cash flow, most of the time all the value comes in the future',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-5',
+      text: '“Simply stated, the value of a business today is the sum of all the money it will make in the future. (To properly value a business, you also have to discount those future cash flows to their present worth, since a given amount of money today is worth more than the same amount in the future.”',
+      takeaway:
+        'Value businesses by their growth potential, not necessarily what they are at the current moment',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-6',
+      text: '“Every monopoly is unique, but they usually share some combination of the following characteristics: proprietary technology, network effects, economies of scale, and branding.”',
+      takeaway:
+        'monopolies have better tech, the ability to get better as the grow, the ability TO grow and great branding to tell this story',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-7',
+      text: '“The perfect target market for a startup is a small group of particular people concentrated together and served by few or no competitors.”',
+      takeaway:
+        'Focus on a small market to start, preferably one that has no competition',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-8',
+      text: '“The most successful companies make the core progression - to first dominate a specific niche and then to scale to adjacent markets - a part of their founding narrative.”',
+      takeaway: 'Most great companies all start by dominating a small niche',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-9',
+      text: '“PayPal could be seen as disruptive, but we didn’t try to directly challenge any large competitor. It’s true that we took some business away from Visa when we popularized internet payments: you might use PayPal to buy something online instead of using your VIsa card to buy it in a store. But since we expanded the market for payments overall, we gave Visa far more business than we took. The overall dynamic was net positive, unlike Napster’s negative-sum struggle with the U.S. recording industry. As you craft a plan to expand to adjacent markets, don’t disrupt: avoid competition as much as possible.”',
+      takeaway:
+        'Instead of stealing market share away from competitors, create something that increases the market value so you don’t disrupt too many competitors',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-10',
+      text: '“From the Renaissance and the Enlightenment to the mid-20th century, luck was something to be mastered, dominated, and controlled; everyone agreed that you should do what you could, not focus on what you couldn’t. Ralph Waldo Emerson captured this ethos when he wrote: “Shallow men believe in luck, believe in circumstances...Strong men believe in cause and effect.” In 1912, after he became the first explorer to reach the South Pole, Roald Amundsen wrote: “Victory awaits him who has everything in order-luck, people call it.” No one pretended that misfortune didn’t exist, but prior generations believed in making their own luck by working hard.”',
+      takeaway: 'Luck is where preparation meets opportunity',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-11',
+      text: '“Finance epitomizes indefinite thinking because it’s the only way to make money when you have no idea how to create.”',
+      takeaway:
+        'Finance doesn’t actually create money, it just shuffles it around because people in finance for the most part can’t create anything to move society forward  I think thats a little bold. “people in finance can’t create anything to move society forward”. The very foundation of what gives any chance to succeed, is Funding. VC is a form of finance.',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-12',
+      text: '“What would it mean to prioritize design over chance? Today, “good design” is an aesthetic imperative, and everybody from slackers to yuppies carefully “curates” their outward appearance. It’s true that every great entrepreneur is first and foremost a designer. Anyone who has held an iDevice or a smoothly machined MacBook has felt the result of Steve Job’s obsession with visual and experiential perfection. But the most important lesson to learn from Jobs has nothing to do with aesthetics. The greatest thing Jobs designed was his business. Apple imagined and executed definite multi-year plans to create new products and distribute them effectively. Forget “minimum viable products”-ever since he started Apple in 1976, Jobs saw that you can change the world through careful planning, not by listening to focus group feedback or copying others’ successes.”',
+      takeaway:
+        'When people think of design they think of aesthetics but design can mean planning also. Jobs “designed” apple in a very particular way and then executed to perfection',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-13',
+      text: '“A business with a good definite plan will always be underrated in a world where people see the future as random.”',
+      takeaway:
+        'Having a plan gives you a leg up on the competition that doesn’t',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-14',
+      text: '“Money makes money. “For whoever has will be given more, and they will have an abundance. Whoever does not have, even what they have will be taken from them” (Matthew 25:29). Albert Einstein made the same observation when he stated that compound interest was “the eighth wonder of the world, “ “the greatest mathematical discovery of all time,” or even “the most powerful force in the universe.” Whichever version you prefer, you can’t miss his message: never underestimate exponential growth."',
+      takeaway:
+        'Startups are all about exponential growth Totally agree with this. Crazy to think about technological capabilities improving at exponential rate when we are older.',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-15',
+      text: '“The power law is not just important to investors; rather, it’s important to everybody because everybody is an investor. An entrepreneur makes a major investment just by sending her time working on a startup. Therefore every entrepreneur must think about whether her company is going to succeed and become valuable. Every individual is unavoidably an investor, too. When you choose a career, you act on your belief that the kind of work you do will be valuable decades from now.”',
+      takeaway:
+        'Will what you’re doing now be around a decade from now? Does it have the ability to be worth more than everything else you’ve ever done combined?',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-16',
+      text: '“So when thinking about what kind of company to build, there are two distinct questions to ask: What secrets is nature not telling you? What secrets are people not telling you?”',
+      takeaway:
+        'You can either create something from scratch that no one knew existed before, or create something for people that they never knew they needed before',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-17',
+      text: '“So who do you tell? Whoever you need to, and no more. In practice, there’s always a golden mean between telling nobody and telling everybody-and that’s a company. The best entrepreneurs know this: every great business is built around a secret that’s hidden from the outside. A great company is a conspiracy to change the world; when you share your secret, the recipe becomes a fellow conspirator.”',
+      takeaway:
+        'Your secret is your true differentiator, a company is a group of people who all share that secret differentiation',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-18',
+      text: '“When you start something, the first and most crucial decision you make is whom to start it with. Choosing a co-founder is like getting married, and founder conflict is just as ugly as divorce.”',
+      takeaway: 'You are basically marrying your co-founder, choose wisely',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-19',
+      text: '“Equity is a powerful tool precisely because of these limitations. Anyone who prefers owning a part of your company to being paid in cash reveals a preference for the long term and a commitment to increasing your company’s value in the future. Equity can’t create perfect incentives, but it’s the best way for a founder to keep everyone in the company broadly aligned.”',
+      takeaway:
+        'Equity is a good judge of long term investment from an employee in a company. If they want cash then they are just in it for the short term and probably the money',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-20',
+      text: '“Since time is your most valuable asset, it’s odd to spend it working with people who don’t envision any long-term future together.”',
+      takeaway:
+        'Time is valuable, spend it with people who are on the same business mission as you',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-21',
+      text: '“On the inside, every individual should be sharply distinguished by her work.”',
+      takeaway:
+        'Everyone needs to bring a specific valuable asset to a start up',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-22',
+      text: '“We underestimate the importance of distribution-a catchall term for everything it takes to sell a product.”',
+      takeaway:
+        'A great product won’t sell itself, distribution is another word for sales',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-23',
+      text: '“Like acting, sales works best when hidden. This explains why almost everyone whose job involves distribution-whether they’re in sales, marketing, or advertising-has a job title that has nothing to do with those things.”',
+      takeaway:
+        'The best salespeople are the one’s who you don’t even realize are selling',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-24',
+      text: '“Two metrics set the limits for effective distribution. The total net profit that you earn on average over the course of your relationship with a customer (Customer Lifetime Value, or CLV) must exceed the amount you spend on average to acquire a new customer (Customer Acquisition Cost, or CAC)',
+      takeaway: 'if CLV > CAC and then it’s a good sale',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-25',
+      text: '“Any prospective employee worth hiring will do his own diligence; what he finds or doesn’t find when he googles you will be critical to success of your company.”',
+      takeaway:
+        'Telling your brand story via search and discovery is vital when people are doing their due diligence. Own your story, don’t let others hijack it (connect to Google ZMOT)',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-26',
+      text: '“Properly understood, technology is the one way for us to escape competition in a globalizing world. As computers become more and more powerful, they won’t be substitutes for humans: they’ll be complements.”',
+      takeaway:
+        'Technology will help empower humans and differentiate them as we become a more globalized economy',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-27',
+      text: '“1. The Engineering Question: Can you create breakthrough technology instead of incremental improvements? 2. The Timing Question: Is now the right time to start your particular business? 3. The Monopoly Question: Are you starting with a big share of a small market? 4. The People Question: Do you have the right team? 5. The Distribution Question: Do you have a way to not just create but deliver your product? 6. The Durability Question: Will your market position be defensible 10 and 20 years into the future? 7. The Secret Question: Have you identified a unique opportunity that others don’t see?”',
+      takeaway:
+        'These 7 questions must be addressed and designed if you want to have an uber successful company',
+    },
+    {
+      id: 'zero-to-one-notes-on-startups-or-how-to-build-the-future-28',
+      text: '“An entrepreneur can’t benefit from macro-scale insight unless his own plans begin at the micro-scale.”',
+      takeaway: 'Dominate a niche market first and then expand',
     },
   ],
 }

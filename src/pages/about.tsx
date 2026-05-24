@@ -43,7 +43,11 @@ function About() {
                   <a href="https://www.rula.com/">
                     Rula
                   </a>
-                  . Previous at Houzz.
+                  . Previous at{' '}
+                  <a href="https://www.houzz.com/">
+                    Houzz
+                  </a>
+                  .
               </p>
               <p>
                 In my free time I focus on {' '}

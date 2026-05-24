@@ -36,7 +36,11 @@ function Home({ data }: Props) {
                 <a href="https://www.rula.com/">
                   Rula
                 </a>
-                . Previous at Houzz. 3x{' '}
+                . Previous at{' '}
+                <a href="https://www.houzz.com/">
+                  Houzz
+                </a>
+                . 3x{' '}
                 <a href="https://www.reforge.com">Reforge</a>
                 {' '} alum.
               </p>

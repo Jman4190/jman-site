@@ -14,10 +14,8 @@ function MissingPage() {
             subtitle="This page doesn’t exist. Try heading back home to start from the beginning."
           />
           <div>
-            <Link href="/" passHref>
-              <a>
-                <Button>Return home</Button>
-              </a>
+            <Link href="/">
+              <Button>Return home</Button>
             </Link>
           </div>
         </div>

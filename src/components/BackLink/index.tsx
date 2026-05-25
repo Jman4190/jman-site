@@ -8,10 +8,11 @@ type Props = {
 
 export default function BackLink({ href, label }: Props) {
   return (
-    <Link href={href} passHref>
-      <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-        &larr; {label}
-      </a>
+    <Link
+      href={href}
+      className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100"
+    >
+      &larr; {label}
     </Link>
   )
 }

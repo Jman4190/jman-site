@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BookshelfBook } from '~/data/bookshelf'
@@ -55,8 +56,8 @@ function Book3D({
     : 'clamp(-90px, -13vw, -145px)'
 
   return (
-    <Link href="/bookshelf/[slug]" as={`/bookshelf/${book.slug}`}>
-      <a
+    <Link
+      href={`/bookshelf/${book.slug}`}
         aria-label={`Open favorite quotes from ${book.title}`}
         aria-current={isCoarsePointer && isActive ? 'true' : undefined}
         data-cy="bookshelf-book-link"
@@ -79,6 +80,8 @@ function Book3D({
           flexDirection: 'row',
           justifyContent: 'flex-start',
           flexShrink: 0,
+          height: '150px',
+          minHeight: '150px',
           width: 'clamp(140px, 16vw, 220px)',
           perspective: '1000px',
           gap: '0px',
@@ -209,9 +212,12 @@ function Book3D({
                 'linear-gradient(to right, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.45) 3px, rgba(255, 255, 255, 0.22) 4px, rgba(255, 255, 255, 0.22) 6px, transparent 7px, transparent 9px, rgba(255, 255, 255, 0.22) 9px, transparent 12px)',
             }}
           />
-          <img
+          <Image
             alt={book.title}
             src={book.coverImage}
+            width={100}
+            height={150}
+            sizes="100px"
             style={{
               transition: reducedMotion
                 ? 'none'
@@ -227,7 +233,6 @@ function Book3D({
             }}
           />
         </div>
-      </a>
     </Link>
   )
 }

@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { baseEmail } from '~/config/seo'
 
@@ -11,12 +10,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const LIST_ID = process.env.MAILCHIMP_LIST_ID
   const API_KEY = process.env.MAILCHIMP_API_KEY
+
+  if (!LIST_ID || !API_KEY || !API_KEY.includes('-')) {
+    return res.status(500).json({
+      error: `Newsletter signup is not configured. Email me directly at ${baseEmail} and I’ll add you!`,
+    })
+  }
+
   const DATACENTER = API_KEY.split('-')[1]
 
   const data = {
     email_address: email,
     status: 'subscribed',
-    tags: ['Dot Com']
+    tags: ['Dot Com'],
   }
 
   const response = await fetch(

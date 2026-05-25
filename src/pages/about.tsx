@@ -1,16 +1,16 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Page from '~/components/Page'
 import { CenteredColumn } from '~/components/Layouts'
-import { NextSeo } from 'next-seo'
+import { Seo } from '~/components/Seo'
 import routes from '~/config/routes'
 import WritingSubscribeBox from '~/components/Writing/Subscribe'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function About() {
   return (
     <Page>
-      <NextSeo
+      <Seo
         title={routes.about.seo.title}
         description={routes.about.seo.description}
         openGraph={routes.about.seo.openGraph}
@@ -20,12 +20,12 @@ function About() {
         <div className="space-y-12 " data-cy="about-page">
           <div className="-mx-4 -mt-16 md:mt-0 md:-mx-8 ">
             <Image
-              src="/static/img/about.jpg"
+              src="/static/img/about.webp"
               alt={'A photo of me'}
-              layout="responsive"
-              width="1280"
-              height="720"
-              className="md:rounded-lg"
+              width={768}
+              height={512}
+              priority
+              className="w-full h-auto md:rounded-lg"
             />
           </div>
           <div className="space-y-12 ">
@@ -33,9 +33,7 @@ function About() {
               <p>
                   Howdy, I&apos;m John. I&apos;m an online creator who tries to produce more than I consume. 
                   You can get to know my voice through my sporadic {' '}
-                  <Link href="/writing" passHref>
-                    <a>blog posts</a>
-                  </Link>,{' '} 
+                  <Link href="/writing">blog posts</Link>,{' '} 
                   <a href="https://www.getrevue.co/profile/jman4190">monthly newsletter</a>,{' '}
                   or following my breadcrumbs on{' '}
                   <a href="https://twitter.com/learnwithjabe">Twitter</a>.
@@ -43,11 +41,7 @@ function About() {
                   <a href="https://www.rula.com/">
                     Rula
                   </a>
-                  . Previous at{' '}
-                  <a href="https://www.houzz.com/">
-                    Houzz
-                  </a>
-                  .
+                  . Previous at Houzz.
               </p>
               <p>
                 In my free time I focus on {' '}

@@ -1,17 +1,22 @@
 import { GetServerSideProps } from 'next'
 import { mediumPosts } from '~/data/writing'
+import { baseUrl } from '~/config/seo'
 
-function generateRssFeed(posts) {
-  const site_url = 'https://brianlovin.com'
-  
+export function generateRssFeed(posts) {
+  const sortedPosts = [...posts].sort(
+    (a, b) =>
+      new Date(b.published_at).getTime() -
+      new Date(a.published_at).getTime()
+  )
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Brian Lovin's Writing</title>
+    <title>John Mannelly's Writing</title>
     <description>The best way to learn is to teach.</description>
-    <link>${site_url}/writing</link>
-    <atom:link href="${site_url}/writing/rss" rel="self" type="application/rss+xml"/>
-    ${posts
+    <link>${baseUrl}/writing</link>
+    <atom:link href="${baseUrl}/writing/rss" rel="self" type="application/rss+xml"/>
+    ${sortedPosts
       .map(
         (post) => `
       <item>
@@ -36,7 +41,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   }
 
   const feed = generateRssFeed(mediumPosts)
-  
+
   res.setHeader('Content-Type', 'text/xml')
   res.write(feed)
   res.end()

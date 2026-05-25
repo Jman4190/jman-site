@@ -8,3 +8,6 @@ node_modules
 yarn-error.log
 .now
 .vercel
+test-results
+playwright-report
+tsconfig.tsbuildinfo

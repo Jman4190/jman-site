@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NextSeo } from 'next-seo'
+import { Seo } from '~/components/Seo'
 import Link from 'next/link'
 import routes from '~/config/routes'
 import Page, { PageHeader } from '~/components/Page'
@@ -10,7 +10,7 @@ import { bookshelfBooks } from '~/data/bookshelf'
 export default function Bookshelf() {
   return (
     <Page>
-      <NextSeo
+      <Seo
         title={routes.bookshelf.seo.title}
         description={routes.bookshelf.seo.description}
         openGraph={routes.bookshelf.seo.openGraph}
@@ -18,10 +18,11 @@ export default function Bookshelf() {
 
       <CenteredColumn>
         <div data-cy="bookshelf-page" className="space-y-8">
-          <Link href="/projects" passHref>
-            <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-              &larr; Projects
-            </a>
+          <Link
+            href="/projects"
+            className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100"
+          >
+            &larr; Projects
           </Link>
 
           <PageHeader

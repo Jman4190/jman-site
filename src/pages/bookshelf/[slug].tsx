@@ -1,7 +1,8 @@
 import * as React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { NextSeo } from 'next-seo'
+import { Seo } from '~/components/Seo'
 import Page from '~/components/Page'
 import { CenteredColumn } from '~/components/Layouts'
 import { baseUrl } from '~/config/seo'
@@ -36,7 +37,7 @@ export default function BookshelfBookPage({ book }: Props) {
 
   return (
     <Page>
-      <NextSeo
+      <Seo
         title={`${book.title} · Bookshelf`}
         description={description}
         openGraph={{
@@ -55,16 +56,21 @@ export default function BookshelfBookPage({ book }: Props) {
 
       <CenteredColumn>
         <div data-cy="bookshelf-detail-page" className="space-y-8">
-          <Link href="/bookshelf" passHref>
-            <a className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100">
-              &larr; Bookshelf
-            </a>
+          <Link
+            href="/bookshelf"
+            className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100"
+          >
+            &larr; Bookshelf
           </Link>
 
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-            <img
+            <Image
               src={book.coverImage}
               alt={book.title}
+              width={128}
+              height={192}
+              loading="eager"
+              sizes="128px"
               className="w-32 h-48 rounded-md object-cover shadow-md"
             />
             <div className="space-y-2">

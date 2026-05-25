@@ -2,9 +2,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import Page from '~/components/Page'
 import { CenteredColumn } from '~/components/Layouts'
-import { initApolloClient } from '~/graphql/services/apollo'
-import { GET_HOME } from '~/graphql/queries'
-import { Post } from '~/graphql/types.generated'
+import { MediumPost, mediumPosts } from '~/data/writing'
 import WritingSubscribeBox from '~/components/Writing/Subscribe'
 import PostsList from '~/components/Writing/List'
 import ProjectsList from '~/components/ProjectsList'
@@ -12,7 +10,7 @@ import Button from '~/components/Button'
 
 interface Props {
   data: {
-    posts: Post[]
+    posts: MediumPost[]
   }
 }
 
@@ -26,9 +24,7 @@ function Home({ data }: Props) {
               <p>
                 Howdy, I&apos;m John. I&apos;m an online creator who tries to produce more than I consume. 
                 You can get to know my voice through my sporadic {' '}
-                <Link href="/writing" passHref>
-                  <a>blog posts</a>
-                </Link>,{' '} 
+                <Link href="/writing">blog posts</Link>,{' '} 
                 <a href="https://johnmannelly.substack.com/">monthly newsletter</a>,{' '}
                  or following my breadcrumbs on{' '}
                 <a href="https://twitter.com/learnwithjabe">Twitter</a>.
@@ -36,11 +32,7 @@ function Home({ data }: Props) {
                 <a href="https://www.rula.com/">
                   Rula
                 </a>
-                . Previous at{' '}
-                <a href="https://www.houzz.com/">
-                  Houzz
-                </a>
-                . 3x{' '}
+                . Previous at Houzz. 3x{' '}
                 <a href="https://www.reforge.com">Reforge</a>
                 {' '} alum.
               </p>
@@ -54,16 +46,12 @@ function Home({ data }: Props) {
               </p>
             </div>
             <div className="flex space-x-4">
-              <Link href="/writing" passHref>
-                <a>
-                  <Button>Blog posts</Button>
-                </a>
+              <Link href="/writing">
+                <Button>Blog posts</Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/johnmannelly" passHref>
-                <a>
-                  <Button>Linkedin</Button>
-                </a>
-              </Link>
+              <a href="https://www.linkedin.com/in/johnmannelly">
+                <Button>Linkedin</Button>
+              </a>
             </div>
           </div>
 
@@ -74,20 +62,22 @@ function Home({ data }: Props) {
             <div className="space-y-6 ">
               {data && data.posts && <PostsList posts={data.posts} />}
             </div>
-            <Link href="/writing">
-              <a className="inline-block font-medium highlight-link-hover">
-                Read all posts &rarr;
-              </a>
+            <Link
+              href="/writing"
+              className="inline-block font-medium highlight-link-hover"
+            >
+              Read all posts &rarr;
             </Link>
           </div>
 
           <div className="space-y-8">
             <h4 className="font-list-heading">Side Projects</h4>
             <ProjectsList />
-            <Link href="/projects">
-              <a className="inline-block font-medium highlight-link-hover">
-                See all projects &rarr;
-              </a>
+            <Link
+              href="/projects"
+              className="inline-block font-medium highlight-link-hover"
+            >
+              See all projects &rarr;
             </Link>
           </div>
         </div>
@@ -97,14 +87,19 @@ function Home({ data }: Props) {
 }
 
 export async function getStaticProps() {
-  const client = await initApolloClient({})
-  const { data } = await client.query({ query: GET_HOME })
+  const posts = [...mediumPosts]
+    .sort(
+      (a, b) =>
+        new Date(b.published_at).getTime() -
+        new Date(a.published_at).getTime()
+    )
+    .slice(0, 3)
+
   return {
-    // because this data is slightly more dynamic, update it every hour
-    revalidate: 60 * 60,
     props: {
-      data,
-      apolloStaticCache: client.cache.extract(),
+      data: {
+        posts,
+      },
     },
   }
 }

@@ -104,8 +104,8 @@ function ProjectsList() {
       </div>
 
       <div className="space-y-1">
-        <Link passHref href="/bookmarks">
-          <a className="font-medium highlight-link-hover">Bookmarks</a>
+        <Link href="/bookmarks" className="font-medium highlight-link-hover">
+          Bookmarks
         </Link>
 
         <p className="text-tertiary">
@@ -114,8 +114,8 @@ function ProjectsList() {
       </div>
 
       <div className="space-y-1">
-        <Link passHref href="/bookshelf">
-          <a className="font-medium highlight-link-hover">Bookshelf</a>
+        <Link href="/bookshelf" className="font-medium highlight-link-hover">
+          Bookshelf
         </Link>
 
         <p className="text-tertiary">

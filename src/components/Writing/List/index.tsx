@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Post } from '~/graphql/types.generated'
+import { MediumPost } from '~/data/writing'
 
 interface Props {
-  posts: Post[]
+  posts: MediumPost[]
 }
 
 export default function PostsList({ posts }: Props) {

@@ -1,18 +1,16 @@
 import * as React from 'react'
 import Page, { PageHeader } from '~/components/Page'
-import { Post } from '~/graphql/types.generated'
 import WritingSubscribeBox from '~/components/Writing/Subscribe'
 import PostsList from '~/components/Writing/List'
-import { GET_POSTS } from '~/graphql/queries'
-import { initApolloClient } from '~/graphql/services/apollo'
 import { CenteredColumn } from '~/components/Layouts'
 import Head from 'next/head'
-import { NextSeo } from 'next-seo'
+import { Seo } from '~/components/Seo'
 import routes from '~/config/routes'
+import { MediumPost, mediumPosts } from '~/data/writing'
 
 interface Props {
   data: {
-    posts: Post[]
+    posts: MediumPost[]
   }
 }
 
@@ -28,7 +26,7 @@ function Writing({ data }: Props) {
         />
       </Head>
 
-      <NextSeo
+      <Seo
         title={routes.writing.seo.title}
         description={routes.writing.seo.description}
         openGraph={routes.writing.seo.openGraph}
@@ -52,13 +50,17 @@ function Writing({ data }: Props) {
 }
 
 export async function getStaticProps() {
-  const client = await initApolloClient({})
-  const { data } = await client.query({ query: GET_POSTS })
+  const posts = [...mediumPosts].sort(
+    (a, b) =>
+      new Date(b.published_at).getTime() -
+      new Date(a.published_at).getTime()
+  )
+
   return {
-    // because this data is slightly more dynamic, update it every hour
-    revalidate: 60 * 60,
     props: {
-      data,
+      data: {
+        posts,
+      },
     },
   }
 }

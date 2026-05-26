@@ -8,7 +8,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'yarn dev --port 3100',
+    command: 'yarn start --port 3100',
     env: {
       NEXT_PUBLIC_FATHOM_SITE_ID: '',
       NEXT_PUBLIC_FATHOM_CUSTOM_URL: '',

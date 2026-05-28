@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { mediumPosts } from '~/data/writing'
+import { getPostsNewestFirst, getRecentPosts, mediumPosts } from '~/data/writing'
 import { generateRssFeed } from '~/pages/writing/rss'
 
 describe('writing data', () => {
@@ -16,14 +16,30 @@ describe('writing data', () => {
 
   it('renders the newest post first in RSS', () => {
     const feed = generateRssFeed(mediumPosts)
-    const newest = [...mediumPosts].sort(
-      (a, b) =>
-        new Date(b.published_at).getTime() -
-        new Date(a.published_at).getTime()
-    )[0]
+    const newest = getPostsNewestFirst()[0]
 
     expect(feed).toContain("John Mannelly's Writing")
     expect(feed.indexOf(`<title>${newest.title}</title>`)).toBeGreaterThan(-1)
     expect(feed).toContain(newest.medium_url)
+  })
+
+  it('returns writing posts newest first without changing the source list', () => {
+    const originalPostIds = mediumPosts.map((post) => post.id)
+    const sortedPosts = getPostsNewestFirst()
+
+    expect(mediumPosts.map((post) => post.id)).toEqual(originalPostIds)
+
+    for (let index = 1; index < sortedPosts.length; index += 1) {
+      const previousDate = new Date(
+        sortedPosts[index - 1].published_at
+      ).getTime()
+      const currentDate = new Date(sortedPosts[index].published_at).getTime()
+
+      expect(previousDate).toBeGreaterThanOrEqual(currentDate)
+    }
+  })
+
+  it('returns the requested number of recent writing posts', () => {
+    expect(getRecentPosts(3)).toEqual(getPostsNewestFirst().slice(0, 3))
   })
 })

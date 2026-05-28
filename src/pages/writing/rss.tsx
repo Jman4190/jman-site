@@ -1,13 +1,13 @@
 import { GetServerSideProps } from 'next'
-import { mediumPosts } from '~/data/writing'
+import {
+  MediumPost,
+  getPostsNewestFirst,
+  mediumPosts,
+} from '~/data/writing'
 import { baseUrl } from '~/config/seo'
 
-export function generateRssFeed(posts) {
-  const sortedPosts = [...posts].sort(
-    (a, b) =>
-      new Date(b.published_at).getTime() -
-      new Date(a.published_at).getTime()
-  )
+export function generateRssFeed(posts: MediumPost[]) {
+  const sortedPosts = getPostsNewestFirst(posts)
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

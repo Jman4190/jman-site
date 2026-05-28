@@ -2,7 +2,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import Page from '~/components/Page'
 import { CenteredColumn } from '~/components/Layouts'
-import { MediumPost, mediumPosts } from '~/data/writing'
+import { MediumPost, getRecentPosts } from '~/data/writing'
 import WritingSubscribeBox from '~/components/Writing/Subscribe'
 import PostsList from '~/components/Writing/List'
 import ProjectsList from '~/components/ProjectsList'
@@ -87,13 +87,7 @@ function Home({ data }: Props) {
 }
 
 export async function getStaticProps() {
-  const posts = [...mediumPosts]
-    .sort(
-      (a, b) =>
-        new Date(b.published_at).getTime() -
-        new Date(a.published_at).getTime()
-    )
-    .slice(0, 3)
+  const posts = getRecentPosts(3)
 
   return {
     props: {

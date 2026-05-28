@@ -211,3 +211,17 @@ export const mediumPosts: MediumPost[] = [
   },
   // Add more posts as needed
 ];
+
+function getPublishedTimestamp(post: MediumPost) {
+  return new Date(post.published_at).getTime();
+}
+
+export function getPostsNewestFirst(posts: MediumPost[] = mediumPosts) {
+  return [...posts].sort(
+    (a, b) => getPublishedTimestamp(b) - getPublishedTimestamp(a)
+  );
+}
+
+export function getRecentPosts(limit: number, posts: MediumPost[] = mediumPosts) {
+  return getPostsNewestFirst(posts).slice(0, limit);
+}

@@ -6,7 +6,7 @@ import { CenteredColumn } from '~/components/Layouts'
 import Head from 'next/head'
 import { Seo } from '~/components/Seo'
 import routes from '~/config/routes'
-import { MediumPost, mediumPosts } from '~/data/writing'
+import { MediumPost, getPostsNewestFirst } from '~/data/writing'
 
 interface Props {
   data: {
@@ -50,11 +50,7 @@ function Writing({ data }: Props) {
 }
 
 export async function getStaticProps() {
-  const posts = [...mediumPosts].sort(
-    (a, b) =>
-      new Date(b.published_at).getTime() -
-      new Date(a.published_at).getTime()
-  )
+  const posts = getPostsNewestFirst()
 
   return {
     props: {

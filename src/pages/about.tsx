@@ -20,10 +20,10 @@ function About() {
         <div className="space-y-12 " data-cy="about-page">
           <div className="-mx-4 -mt-16 md:mt-0 md:-mx-8 ">
             <Image
-              src="/static/img/about.webp"
+              src="/static/img/about-john.jpg"
               alt={'A photo of me'}
-              width={768}
-              height={512}
+              width={1280}
+              height={720}
               priority
               className="w-full h-auto md:rounded-lg"
             />
@@ -41,7 +41,11 @@ function About() {
                   <a href="https://www.rula.com/">
                     Rula
                   </a>
-                  . Previous at Houzz.
+                  . Previously at{' '}
+                  <a href="https://www.houzz.com/">
+                    Houzz
+                  </a>
+                  .
               </p>
               <p>
                 In my free time I focus on {' '}

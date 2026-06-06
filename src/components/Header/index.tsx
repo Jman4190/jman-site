@@ -74,8 +74,8 @@ export default function Header() {
               : router.pathname === route.path ||
                 router.pathname.indexOf(`${route.path}/`) === 0
           const defaultClasses = `font-sans font-semibold flex rounded items-center text-opacity-40 justify-center py-2 text-sm`
-          const activeClasses = `bg-gray-1000 bg-opacity-5 dark:bg-white text-primary filter-saturate filter-blur`
-          const inactiveClasses = `hover:bg-gray-900 filter-saturate hover:bg-opacity-5 dark:hover:bg-white dark:text-white  hover:text-gray-1000 dark:hover:text-gray-100 text-tertiary`
+          const activeClasses = `bg-gray-1000/5 dark:bg-white/10 text-primary filter-saturate`
+          const inactiveClasses = `hover:bg-gray-900/5 filter-saturate dark:hover:bg-white/5 dark:text-white hover:text-gray-1000 dark:hover:text-gray-100 text-tertiary`
           return (
             <Link
               href={route.path}

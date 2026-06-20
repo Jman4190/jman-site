@@ -209,6 +209,14 @@ export const mediumPosts: MediumPost[] = [
     excerpt: 'How building weird little things can help you learn faster, stay current, and launch yourself into new opportunities',
     medium_url: 'https://jman4190.medium.com/side-projects-are-slingshots-49cf1608e29f'
   },
+  {
+    id: '26',
+    title: 'How I Built The Movie Game (My First iOS App)',
+    slug: 'how-i-built-the-movie-game-my-first-ios-app-fd6e2ae36790',
+    published_at: '2026-06-20T01:02:40.000Z',
+    excerpt: 'How I used AI tools, SwiftUI, Convex, Clerk, and a whole lot of Plan Mode to turn a friends-and-family pen-and-paper game into my first iOS app',
+    medium_url: 'https://jman4190.medium.com/how-i-built-the-movie-game-my-first-ios-app-fd6e2ae36790'
+  },
   // Add more posts as needed
 ];
 

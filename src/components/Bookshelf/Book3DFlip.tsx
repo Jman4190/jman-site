@@ -49,10 +49,10 @@ function Book3D({
     ? 'clamp(-64px, -8vw, -95px)'
     : isCoarsePointer
     ? isActive
-      ? '2px'
+      ? '-28px'
       : '-48px'
     : isActive
-    ? 'clamp(4px, 0.5vw, 8px)'
+    ? 'clamp(-48px, -4vw, -28px)'
     : 'clamp(-90px, -13vw, -145px)'
 
   return (

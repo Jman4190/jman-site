@@ -6,6 +6,19 @@ function ProjectsList() {
     <div className="space-y-6">
       <div className="space-y-1">
         <a
+          href="https://themoviegame.app/"
+          className="font-medium highlight-link-hover"
+        >
+          The Movie Game
+        </a>
+
+        <p className="text-tertiary">
+          My first iOS app, vibe coded with Codex.
+        </p>
+      </div>
+
+      <div className="space-y-1">
+        <a
           href="https://smalltalesbooks.com"
           className="font-medium highlight-link-hover"
         >

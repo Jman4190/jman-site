@@ -104,7 +104,7 @@ function ProjectsList() {
 
       <div className="space-y-1">
         <a
-          href="https://intheloopica.carrd.co"
+          href="https://intheloopica.xyz/"
           className="font-medium highlight-link-hover"
         >
           In The Loop

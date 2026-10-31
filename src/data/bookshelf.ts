@@ -205,6 +205,29 @@ const bookSources: BookSource[] = [
     title: 'Zero to One: Notes on Startups, or How to Build the Future',
     author: 'Peter Thiel and Blake Masters',
   },
+  { title: "Death's End", author: 'Cixin Liu' },
+  {
+    title: "The Diamond Age: Or, a Young Lady's Illustrated Primer",
+    author: 'Neal Stephenson',
+  },
+  { title: 'The Creative Act: A Way of Being', author: 'Rick Rubin' },
+  { title: 'Greenlights', author: 'Matthew McConaughey' },
+  {
+    title: 'Hard Drive: Bill Gates and the Making of the Microsoft Empire',
+    author: 'James Wallace and Jim Erickson',
+  },
+  {
+    title: 'Boyd: The Fighter Pilot Who Changed the Art of War',
+    author: 'Robert Coram',
+  },
+  {
+    title: 'The Master: The Long Run and Beautiful Game of Roger Federer',
+    author: 'Christopher Clarey',
+  },
+  { title: 'Saban: The Making of a Coach', author: 'Monte Burke' },
+  { title: 'Dungeon Crawler Carl', author: 'Matt Dinniman' },
+  { title: 'The Making of the Atomic Bomb', author: 'Richard Rhodes' },
+  { title: 'The Dark Forest', author: 'Cixin Liu' },
 ]
 
 function buildBookshelfBooks(): BookshelfBook[] {

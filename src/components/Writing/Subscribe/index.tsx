@@ -48,7 +48,7 @@ export default function WritingSubscribeBox() {
           give me a test drive on{' '}
           <a
             href="https://twitter.com/jman4190/"
-            className="font-normal rounded-sm px-0.5 -mx-0.5 bg-blue-500 text-primary bg-opacity-20 hover:bg-opacity-30 dark:hover:bg-opacity-100"
+            className="font-normal rounded-sm px-0.5 -mx-0.5 bg-blue-500/20 text-primary hover:bg-blue-500/30 dark:hover:bg-blue-500"
           >
             Twitter
           </a>

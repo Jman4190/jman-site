@@ -217,6 +217,14 @@ export const mediumPosts: MediumPost[] = [
     excerpt: 'How I used AI tools, SwiftUI, Convex, Clerk, and a whole lot of Plan Mode to turn a friends-and-family pen-and-paper game into my first iOS app',
     medium_url: 'https://jman4190.medium.com/how-i-built-the-movie-game-my-first-ios-app-fd6e2ae36790'
   },
+  {
+    id: '27',
+    title: 'Why I’m Open Sourcing Small Tales',
+    slug: 'why-im-open-sourcing-small-tales-971220b33b33',
+    published_at: '2026-11-07T00:00:16.000Z',
+    excerpt: 'What I learned building an AI children’s book business, why I’m sharing the code, and what you can fork.',
+    medium_url: 'https://jman4190.medium.com/why-im-open-sourcing-small-tales-971220b33b33'
+  },
   // Add more posts as needed
 ];
 

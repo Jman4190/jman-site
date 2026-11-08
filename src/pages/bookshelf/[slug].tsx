@@ -58,7 +58,7 @@ export default function BookshelfBookPage({ book }: Props) {
         <div data-cy="bookshelf-detail-page" className="space-y-8">
           <Link
             href="/bookshelf"
-            className="leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100"
+            className="block w-fit leading-snug text-tertiary hover:text-gray-1000 dark:hover:text-gray-100"
           >
             &larr; Bookshelf
           </Link>
